@@ -16,7 +16,7 @@ public:
     // constructor
     Fuerza();
     // destructor
-    ~Fuerza();
+    virtual ~Fuerza() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
 };

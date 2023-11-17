@@ -47,3 +47,11 @@ float Usuario:: frecuencia_cardiaca_prom(){
 }
 
 void Usuario:: mostrar_info_principal_usuario(){}
+
+const string &Usuario::getNombre() const {
+    return nombre;
+}
+
+const string &Usuario::getApellido() const {
+    return apellido;
+}

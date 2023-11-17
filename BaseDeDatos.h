@@ -10,7 +10,7 @@
 
 class BaseDeDatos {
 private:
-    vector<Usuario> usuarios;
+    vector<Usuario*> usuarios;
 public:
     BaseDeDatos();
 

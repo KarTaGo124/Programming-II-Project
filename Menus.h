@@ -11,28 +11,29 @@ int menuPrincipal(){
     int option;
     do {
         cout << "\t MENU PRINCIPAL" << endl
-        << "1. Ingresar datos de un Usuario" << endl
-        << "2. Ingresar ejercicios a la rutina de un Usuario" << endl
-        << "3. Mostrar reporte individual de un Usuario" << endl
-        << "4. Mostrar reporte general de todos los Usuarios" << endl
-        << "5. Exportar reporte general" << endl
-        << "6. Finalizar" << endl
-        << "Elija una opcion: "; cin >> option;
+             << "1. Ingresar datos de un Usuario" << endl
+             << "2. Ingresar ejercicios a la rutina de un Usuario" << endl
+             << "3. Mostrar reporte individual de un Usuario" << endl
+             << "4. Mostrar reporte general de todos los Usuarios" << endl
+             << "5. Exportar reporte general" << endl
+             << "6. Finalizar" << endl
+             << "Elija una opcion: "; cin >> option;
     } while (option < 1 || option > 6);
     return option;
 }
-/* esta webada no va aca, no se puede poner un menu usuario pq los usuarios se van agregando
- * esto deberia ir como un cout en el main que diga
- * "Ingrese un indice valido para registrar los ejercicios de un Usuario [0 - usuarios.size() - 1] :"
-int menuUsuarios(){
+
+int menuUsuarios(const vector<Usuario*> &usuarios){
     int option;
     do {
-        cout << "\t MENU USUARIOS" << endl
-        << "- Ingrese el indice del usuario (0 -" cin >> option;
-    } while()
+        cout << "\t MENU USUARIOS" << endl;
+        for (int i = 0; i < usuarios.size(); i++){
+            cout << i + 1 << ". " << usuarios[i]->getNombre() << " " << usuarios[i]->getApellido();
+        }
+        cin >> option;
+    } while(option < 1 || option >= usuarios.size());
     return option;
 }
- */
+
 int menuEjercicios(){
     int option;
     do {

@@ -4,7 +4,7 @@
 
 #include "Flexibilidad.h"
 Flexibilidad::Flexibilidad() {}
-Flexibilidad::~Flexibilidad() noexcept {}
+Flexibilidad::~Flexibilidad() {cout<<"Ejercicio de Flexibilidad destruido"<<endl;}
 
 void Flexibilidad::hallar_CQ_FC() {
     if (nombre == "Yoga"){

@@ -15,7 +15,7 @@ public:
     // constructor
     Flexibilidad();
     // destructor
-    ~Flexibilidad();
+    virtual ~Flexibilidad() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
 

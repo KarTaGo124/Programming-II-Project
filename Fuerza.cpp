@@ -4,7 +4,7 @@
 
 #include "Fuerza.h"
 Fuerza::Fuerza() {}
-Fuerza::~Fuerza() noexcept {}
+Fuerza::~Fuerza() {cout<<"Ejercicio de Fuerza destruido"<<endl;}
 
 void Fuerza::hallar_CQ_FC() {
     if (nombre == "Press Banca"){

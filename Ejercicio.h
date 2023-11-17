@@ -16,7 +16,7 @@ protected:
     string frecuencia; // frecuencia en la que realizamos el ejercicio (cada dia, semana, etc)
 public:
     // destructor
-    virtual ~Ejercicio();
+    virtual ~Ejercicio() {cout<<"Ejercicio destruido"<<endl;}
     // metodo virtual puro
     virtual void hallar_CQ_FC() = 0;
 

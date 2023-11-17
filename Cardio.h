@@ -15,7 +15,7 @@ public:
     // constructor
     Cardio();
     // destructor
-    ~Cardio();
+    virtual ~Cardio() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
 };
