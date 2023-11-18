@@ -14,9 +14,7 @@ private:
     string apellido;
 
     int edad;
-
-
-
+    string DNI;
     string genero;
 
     float peso, peso_objetivo,altura, masa_muscular;
@@ -33,9 +31,13 @@ public:
     // constructores
     Usuario();
     Usuario(string _n);
-    Usuario(string n,string g,string a,int al,float macular, float p, float p_o);
+    Usuario(string n,string g,string a,string dni,float al,float masa_cular,float grasa_cular, float p, float p_o);
 
-    void validar_usuario();
+    // destructores
+    ~Usuario();
+
+    //metodos
+    void validar_usuario(vector<Usuario*> &usuarios);
 
     void agregar_ejercicio(Ejercicio* ejercicio);
 

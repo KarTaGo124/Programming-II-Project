@@ -14,6 +14,7 @@ private:
 public:
     // constructor
     Cardio();
+    Cardio(string nombre);
     // destructor
     virtual ~Cardio() ;
     // metodos redefinidos

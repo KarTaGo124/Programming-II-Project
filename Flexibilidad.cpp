@@ -3,7 +3,12 @@
 //
 
 #include "Flexibilidad.h"
-Flexibilidad::Flexibilidad() {}
+Flexibilidad:: Flexibilidad(){}
+
+Flexibilidad::  Flexibilidad(string nombre){
+    this->nombre = nombre;
+}
+
 Flexibilidad::~Flexibilidad() {cout<<"Ejercicio de Flexibilidad destruido"<<endl;}
 
 void Flexibilidad::ingresar_datos() {

@@ -13,6 +13,7 @@ private:
     int series;
     float peso; // peso con el que realizamos el ejercicio de fuerza
 public:
+    Fuerza(string nombre);
     // constructor
     Fuerza();
     // destructor

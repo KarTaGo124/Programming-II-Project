@@ -4,10 +4,9 @@
 
 #include "Usuario.h"
 
-
 Usuario:: Usuario(){}
 
-Usuario:: Usuario(string n,string g,string a,int al,float macular, float p, float p_o){
+Usuario:: Usuario(string n,string g,string a,string dni,float al,float masa_cular,float grasa_cular, float p, float p_o){
 
     this->nombre=n;
     this->genero=g;
@@ -15,9 +14,13 @@ Usuario:: Usuario(string n,string g,string a,int al,float macular, float p, floa
     this->peso_objetivo=p_o;
     this->apellido=a;
     this ->altura=al;
-    this ->masa_muscular=macular;
+    this ->masa_muscular=masa_cular;
+    this ->grasa_coporal=grasa_cular;
+    this ->DNI=dni;
+
 
 }
+
 Usuario:: Usuario(string _n):nombre(_n){}
 
 void Usuario::validar_usuario(vector<Usuario*> &usuarios) {

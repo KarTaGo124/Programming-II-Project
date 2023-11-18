@@ -12,8 +12,11 @@ private:
     int duracion;
     string dificultad;
 public:
-    // constructor
     Flexibilidad();
+    Flexibilidad(string nombre);
+
+    // constructor
+
     // destructor
     virtual ~Flexibilidad() ;
     // metodos redefinidos
