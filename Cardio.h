@@ -9,8 +9,8 @@
 class Cardio : public Ejercicio{
 private:
     // atributos
-    int duracion; // minutos
-    int velocidad; // metros por segundo
+    float duracion; // minutos
+    float velocidad; // metros por segundo
 public:
     // constructor
     Cardio();
@@ -18,6 +18,8 @@ public:
     virtual ~Cardio() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
+    void ingresar_datos() override;
+    void mostrar_informacion() override;
 };
 
 

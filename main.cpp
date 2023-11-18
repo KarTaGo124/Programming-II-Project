@@ -9,7 +9,7 @@
 int main() {
     BaseDeDatos miBaseDeDatos;
 
-    int opcion;
+    int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7;
 
     do {
         cout << "\n----- Menú Principal -----" << endl;

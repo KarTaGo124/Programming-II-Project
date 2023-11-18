@@ -11,26 +11,26 @@ int menuPrincipal(){
     int option;
     do {
         cout << "\t MENU PRINCIPAL" << endl
-             << "1. Ingresar datos de un Usuario" << endl
-             << "2. Ingresar ejercicios a la rutina de un Usuario" << endl
+             << "1. Ingresar datos de un nuevo Usuario" << endl
+             << "2. Ingresar rutina de un Usuario" << endl
              << "3. Mostrar reporte individual de un Usuario" << endl
              << "4. Mostrar reporte general de todos los Usuarios" << endl
              << "5. Exportar reporte general" << endl
              << "6. Finalizar" << endl
-             << "Elija una opcion: "; cin >> option;
+             << "Elija una opción: "; cin >> option;
     } while (option < 1 || option > 6);
     return option;
 }
 
 int menuUsuarios(const vector<Usuario*> &usuarios){
     int option;
+    cout << "\t MENU USUARIOS" << endl;
+    for (int i = 0; i < usuarios.size(); i++){
+        cout << i + 1 << ". " << usuarios[i]->getNombre() << " " << usuarios[i]->getApellido() << endl;
+    }
     do {
-        cout << "\t MENU USUARIOS" << endl;
-        for (int i = 0; i < usuarios.size(); i++){
-            cout << i + 1 << ". " << usuarios[i]->getNombre() << " " << usuarios[i]->getApellido();
-        }
-        cin >> option;
-    } while(option < 1 || option >= usuarios.size());
+        cout << "Ingrese el índice de un Usuario: "; cin >> option;
+    } while(option < 1 || option > usuarios.size());
     return option;
 }
 
@@ -41,8 +41,8 @@ int menuEjercicios(){
         << "1. Cardio" << endl
         << "2. Fuerza" << endl
         << "3. Flexibilidad" << endl
-        << "4. Volver al menu principal" << endl
-        << "Elija una opcion: "; cin >> option;
+        << "4. Volver al Menu Principal" << endl
+        << "Elija una opción: "; cin >> option;
     } while (option < 1 || option > 4);
     return option;
 }
@@ -54,8 +54,9 @@ int menuCardio(){
         << "2. Ciclismo" << endl
         << "3. Nadar" << endl
         << "4. Saltar Cuerda" << endl
-        << "Elija una opcion: "; cin >> option;
-    } while (option < 1 || option > 4);
+        << "5. Volver al Menu Ejercicios" << endl
+        << "Elija una opción: "; cin >> option;
+    } while (option < 1 || option > 5);
     return option;
 }
 int menuFuerza(){
@@ -67,8 +68,9 @@ int menuFuerza(){
         << "3. Sentadillas" << endl
         << "4. Dominadas" << endl
         << "5. Flexiones" << endl
-        << "Elija una opcion: "; cin >> option;
-    } while (option < 1 || option > 5);
+        << "6. Volver al Menu Ejercicios" << endl
+        << "Elija una opción: "; cin >> option;
+    } while (option < 1 || option > 6);
     return option;
 }
 int menuFlexibilidad(){
@@ -79,7 +81,8 @@ int menuFlexibilidad(){
         << "2. Danza" << endl
         << "3. Arte Marcial" << endl
         << "4. Estiramientos" << endl
-        << "Elija una opcion: "; cin >> option;
-    } while (option < 1 || option > 4);
+        << "5. Volver al Menu Ejercicios" << endl
+        << "Elija una opción: "; cin >> option;
+    } while (option < 1 || option > 5);
     return option;
 }

@@ -7,8 +7,7 @@ Cardio::Cardio() {}
 Cardio::~Cardio() {cout<<"Ejercicio de Cardio destruido"<<endl;}
 
 void Cardio::hallar_CQ_FC() {
-    if (nombre == "Correr"){
-
+    if (nombre == "Correr") {
         CQE = 0;
         FCE = 0;
     }

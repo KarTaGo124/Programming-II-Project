@@ -18,7 +18,8 @@ public:
     virtual ~Flexibilidad() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
-
+    void ingresar_datos() override;
+    void mostrar_informacion() override;
 };
 
 

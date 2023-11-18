@@ -19,6 +19,9 @@ public:
     virtual ~Ejercicio() {cout<<"Ejercicio destruido"<<endl;}
     // metodo virtual puro
     virtual void hallar_CQ_FC() = 0;
+    virtual void ingresar_datos() = 0;
+    virtual void mostrar_informacion() = 0;
+
 
     int getFCE(){return FCE;}
 

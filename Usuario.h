@@ -30,7 +30,7 @@ private:
     vector<float> historial_masa_muscular;
 
 public:
-
+    // constructores
     Usuario();
     Usuario(string _n);
     Usuario(string n,string g,string a,int al,float macular, float p, float p_o);
@@ -43,9 +43,16 @@ public:
 
     float frecuencia_cardiaca_prom();
 
-    void mostrar_info_principal_usuario();
+    void reporte_individual();
 
-    ~Usuario();
+    // getters
+
+    string const& getDNI() const;
+
+    const string &getNombre() const;
+
+    const string &getApellido() const;
+
 
 
 };

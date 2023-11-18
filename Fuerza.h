@@ -11,7 +11,7 @@ private:
     // atributos
     int repeticiones;
     int series;
-    int peso; // peso con el que realizamos el ejercicio de fuerza
+    float peso; // peso con el que realizamos el ejercicio de fuerza
 public:
     // constructor
     Fuerza();
@@ -19,6 +19,10 @@ public:
     virtual ~Fuerza() ;
     // metodos redefinidos
     void hallar_CQ_FC() override;
+    void ingresar_datos() override;
+    void mostrar_informacion() override;
+
+
 };
 
 
