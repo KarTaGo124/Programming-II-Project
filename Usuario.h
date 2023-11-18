@@ -10,21 +10,14 @@
 class Usuario {
 private:
     string nombre;
-
     string apellido;
-
     int edad;
     string DNI;
     string genero;
-
-    float peso, peso_objetivo,altura, masa_muscular;
-
-    vector<Ejercicio*> actividades;
-
+    float peso, peso_objetivo,altura,masa_muscular,grasa_coporal;
+    vector<Ejercicio*> ejercicios;
     vector<float> historial_de_pesos;
-
     vector<float> historial_calorias_quemadas;
-
     vector<float> historial_masa_muscular;
 
 public:
