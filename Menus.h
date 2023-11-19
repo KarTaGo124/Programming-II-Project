@@ -1,7 +1,3 @@
-//
-// Created by Guillermo Galvez on 16/11/2023.
-//
-
 #ifndef PROYECTO_MENUS_H
 #define PROYECTO_MENUS_H
 
@@ -13,12 +9,13 @@ int menuPrincipal(){
         cout << "\t MENU PRINCIPAL" << endl
              << "1. Ingresar datos de un nuevo Usuario" << endl
              << "2. Ingresar rutina de un Usuario" << endl
-             << "3. Mostrar reporte individual de un Usuario" << endl
-             << "4. Mostrar reporte general de todos los Usuarios" << endl
-             << "5. Exportar reporte general" << endl
-             << "6. Finalizar" << endl
+             << "3. Mostrar gráficas de progreso de un Usuario" << endl
+             << "4. Mostrar reporte individual de un Usuario" << endl
+             << "5. Mostrar reporte general de todos los Usuarios" << endl
+             << "6. Exportar reporte general" << endl
+             << "7. Finalizar" << endl
              << "Elija una opción: "; cin >> option;
-    } while (option < 1 || option > 6);
+    } while (option < 1 || option > 7);
     return option;
 }
 

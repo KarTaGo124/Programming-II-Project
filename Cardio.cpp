@@ -1,5 +1,4 @@
 //
-// Created by Guillermo Galvez on 15/11/2023.
 //
 
 #include "Cardio.h"
@@ -33,7 +32,6 @@ void Cardio::ingresar_datos() {
     this->velocidad = velocidad;
     this->duracion = duracion;
     this->frecuencia = frecuencia;
-
 }
 
 void Cardio::mostrar_informacion() {

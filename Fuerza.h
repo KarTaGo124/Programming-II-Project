@@ -1,7 +1,3 @@
-//
-// Created by Guillermo Galvez on 15/11/2023.
-//
-
 #ifndef PROYECTO_FUERZA_H
 #define PROYECTO_FUERZA_H
 

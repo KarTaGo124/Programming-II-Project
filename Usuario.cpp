@@ -21,8 +21,31 @@ Usuario:: Usuario(string n,string g,string a,string dni,float al,float masa_cula
 
 }
 
-Usuario:: Usuario(string _n):nombre(_n){}
+/**
+ * Destructor for the Usuario class.
+ * Displays a message when an instance of the Usuario class is destroyed.
+ */
+Usuario::~Usuario() {cout<<"Usuario destruido"<<endl;}
 
+
+/**
+ * Validates user input for Usuario attributes.
+ * Ensures that the entered data is valid and not already present in the database.
+ * @param usuarios A vector containing pointers to existing Usuario objects.
+ * @pre The 'usuarios' vector should not be empty, and each Usuario object in it must have a valid DNI.
+ * @post The Usuario object is validated, and its attributes are set according to user input.
+ *
+ * Example:
+ * @code
+ * vector<Usuario*> usuarios;
+ * Usuario* user1 = new Usuario("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * usuarios.push_back(user1);
+ *
+ * Usuario* newUser = new Usuario();
+ * newUser->validar_usuario(usuarios);
+ * // The method will prompt the user to input data, and if valid, newUser will be added to the 'usuarios' vector.
+ * @endcode
+ */
 void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
     do {
         cout << "Ingrese el nombre: ";
@@ -80,7 +103,17 @@ void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
     cout << "Usuario validado correctamente." << endl;
 }
 
-void Usuario::  agregar_ejercicio(Ejercicio* ejercicio){
+/**
+ * Adds an exercise to the user's exercise list.
+ * @param ejercicio A pointer to the Ejercicio object to be added.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * Ejercicio* exercise = new Ejercicio("Running", 30, 150);
+ * user.agregar_ejercicio(exercise); // Adds the exercise to the user's list.
+ * @endcode
+ */
+void Usuario::agregar_ejercicio(Ejercicio* ejercicio) {
     ejercicios.push_back(ejercicio);
 }
 
@@ -98,8 +131,8 @@ float Usuario:: frecuencia_cardiaca_prom(){
 }
 
 void Usuario::reporte_individual() {
-    // lista de ejercicios
-    cout << "Reporte Individiual de " << nombre << " " << apellido << endl << "----------------------------------------" << endl;
+    cout << "----------------------------------------" << endl << "Reporte Individiual de " <<
+    nombre << " " << apellido << endl;
     for (auto i: ejercicios){
         i->mostrar_informacion();
     }
@@ -116,4 +149,3 @@ const string &Usuario::getApellido() const {
     return apellido;
 }
 
-Usuario::~Usuario() {cout<<"Usuario destruido"<<endl;}

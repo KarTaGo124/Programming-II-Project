@@ -1,7 +1,3 @@
-//
-// Created by Guillermo Galvez on 15/11/2023.
-//
-
 #ifndef PROYECTO_FLEXIBILIDAD_H
 #define PROYECTO_FLEXIBILIDAD_H
 

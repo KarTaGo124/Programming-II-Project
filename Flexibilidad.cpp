@@ -1,5 +1,4 @@
 //
-// Created by Guillermo Galvez on 15/11/2023.
 //
 
 #include "Flexibilidad.h"
@@ -37,6 +36,8 @@ void Flexibilidad::ingresar_datos() {
 
 void Flexibilidad::mostrar_informacion() {
     cout << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
+    cout <<"Calorias quemadas : "<<CQE<<endl;
+
 }
 void Flexibilidad::hallar_CQ_FC() {
     if (nombre == "Yoga"){

@@ -1,5 +1,4 @@
 //
-// Created by Guillermo Galvez on 15/11/2023.
 //
 
 #include "BaseDeDatos.h"
@@ -130,7 +129,7 @@ void BaseDeDatos::agregar_usuario() {
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 
-    auto *axu=new Usuario(nombre,genero,apellido,dni,altura,masa_muscular*peso/100,grasa_corporal*peso/100,peso,peso_objetivo);
+    auto *axu=new Usuario(nombre,apellido,genero,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,grasa_corporal*peso/100);
     usuarios.push_back(axu);
 
     cout << "¡El Usuario se ha registrado correctamente!" << endl;

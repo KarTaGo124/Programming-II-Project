@@ -1,5 +1,4 @@
 //
-// Created by Guillermo Galvez on 15/11/2023.
 //
 
 #ifndef PROYECTO_CARDIO_H

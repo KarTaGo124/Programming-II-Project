@@ -17,5 +17,6 @@ add_executable(PROYECTO main.cpp
         BaseDeDatos.h
         Menus.h
         Librerias.h
-        )
+        Graficas.h
+)
 add_executable(borrador Borrador/main.cpp)

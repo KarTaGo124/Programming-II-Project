@@ -21,10 +21,26 @@ private:
     vector<float> historial_masa_muscular;
 
 public:
-    // constructores
+    /**
+     * Default constructor for the Usuario class.
+     */
     Usuario();
-    Usuario(string _n);
-    Usuario(string n,string g,string a,string dni,float al,float masa_cular,float grasa_cular, float p, float p_o);
+
+    /**
+     * Parameterized constructor for the Usuario class.
+     * Initializes the Usuario object with provided attributes.
+     * @param nombre          The name of the user.
+     * @param apellido        The last name of the user.
+     * @param genero          The gender of the user.
+     * @param peso            The weight of the user.
+     * @param peso_objetivo   The weight goal of the user.
+     * @param altura          The height of the user.
+     * @param dni             The DNI (Documento Nacional de Identidad) of the user.
+     * @param masa_muscular   The muscular mass of the user.
+     * @param grasa_coporal   The body fat percentage of the user.
+     */
+    Usuario(string nombre, string apellido, string genero, float peso, float peso_objetivo,
+            float altura, string dni, float masa_muscular, float grasa_coporal);
 
     // destructores
     ~Usuario();

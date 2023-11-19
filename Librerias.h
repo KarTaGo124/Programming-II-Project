@@ -1,12 +1,15 @@
-//
-// Created by Guillermo Galvez on 16/11/2023.
-//
-
 #ifndef PROYECTO_LIBRERIAS_H
 #define PROYECTO_LIBRERIAS_H
 
-#endif //PROYECTO_LIBRERIAS_H
-#include <iostream>
-#include <cmath>
-#include <vector>
+/**
+ * @file librerias.h
+ * Header file for including necessary libraries in the project.
+ */
+
+#include <iostream>  ///< Standard Input/Output Stream Library.
+#include <cmath>     ///< Mathematical functions library.
+#include <vector>    ///< Vector container library.
+
 using namespace std;
+
+#endif //PROYECTO_LIBRERIAS_H

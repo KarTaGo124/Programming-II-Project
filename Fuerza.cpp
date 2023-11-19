@@ -1,11 +1,11 @@
-//
-// Created by Guillermo Galvez on 15/11/2023.
-//
-
 #include "Fuerza.h"
+
+/**
+ * Default constructor for the Fuerza class.
+ */
 Fuerza::Fuerza() {}
 Fuerza:: Fuerza(string nombre){
-    this-> nombre = nombre;
+    this->nombre = nombre;
 }
 
 
@@ -35,11 +35,11 @@ void Fuerza:: ingresar_datos(){
             cout << "La frecuencia tiene que ser diaria, interdiaria o semanal. Ingrésela nuevamente. "<<endl;
     } while(frecuencia != "diaria" and frecuencia != "interdiaria" and frecuencia!= "semanal");
 
-
-    this ->repeticiones=repeticiones;
-    this ->series=series;
-    this ->peso=peso;
-    this ->frecuencia=frecuencia;
+    // Set the attributes with the validated user input
+    this->repeticiones=repeticiones;
+    this->series=series;
+    this->peso=peso;
+    this->frecuencia=frecuencia;
 
 }
 void Fuerza:: mostrar_informacion(){

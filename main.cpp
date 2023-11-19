@@ -12,12 +12,12 @@
 // idea para mostrar el progreso en el reporte individual:
 // podriamos preguntar al usuario cuantas semanas han pasado desde que esta haciendo ejercicio y generar las graficas a partir de ello
 // como minimo 1 mes es decir 4 semanas ya que podemos argumentar que en menos de 1 mes no se generan resultados
-// implementar un mensaje que avise cuando llegas al peso objetivo y porcentaje masa muscular o grasa corporal deseado
+// implementar un mensaje que avise cuando llegas al peso objetivo
 // implementar consejos dependiendo del tipo de dieta que quieres hacer (subir o bajar peso)
-// si quiere subir de peso o masa muscular se le recomienda fuerza
-// si quiere bajar de peso o grasa corporal se le recomienda cardio
-// se le recomienda agregar a la rutina al menos uno de flexibilidad para complementar
+// se le recomienda agregar al menos uno de flexibilidad para complementar la rutina
+
 int main() {
+    srand(time(nullptr));
     auto* baseDeDatos = new BaseDeDatos();  // Crear una instancia de la base de datos
 
     int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7;
@@ -57,6 +57,7 @@ int main() {
                                 }
                                 if (opcion4!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_cardio);
+                                Consejos_Generales();
                             } while (opcion4!= 5);
                             break;
                         case 2:
@@ -87,6 +88,7 @@ int main() {
                                 }
                                 if (opcion5!=6)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_fuerza);
+                                Consejos_Generales();
                             } while(opcion5!=6);
                             break;
                         case 3:
@@ -113,29 +115,32 @@ int main() {
                                 }
                                 if (opcion6!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_flexibilidad);
+                                Consejos_Generales();
                             } while(opcion6!=5);
                             break;
                     }
                 } while (opcion3!=4);
                 break;
             case 3:
+                break;
+            case 4:
                 opcion7 = menuUsuarios(baseDeDatos->getUsuarios());
                 baseDeDatos->getUsuarios()[opcion7-1]->reporte_individual();
                 break;
-            case 4:
+            case 5:
                 baseDeDatos->reporte_general();
                 break;
-            case 5:
+            case 6:
                 baseDeDatos->exportarReportes();
                 break;
-            case 6:
+            case 7:
                 cout << "Saliendo del programa." << endl;
                 break;
 
             default:
                 cout << "Opción no válida. Inténtelo de nuevo." << endl;
         }
-    } while (opcion1 != 6);
+    } while (opcion1 != 7);
 
 
 
