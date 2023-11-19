@@ -1,8 +1,6 @@
 #ifndef PROYECTO_EJERCICIO_H
 #define PROYECTO_EJERCICIO_H
-#include "Borrador/CMET.h"
 #include "Librerias.h"
-
 /**
  * @file Ejercicio.h
  * Declaration of the Ejercicio class.
@@ -11,12 +9,14 @@
 /**
  * The Ejercicio class serves as the base class for different types of exercises in the project.
  */
+
 class Ejercicio {
 protected:
     string nombre; // nombre del tipo de ejercicio
-    float FCE; // frecuencia cardiaca por ejercicio
-    float CQE; // calorias quemadas por ejercicio
+    double FCE = 0; // frecuencia cardiaca por ejercicio
+    double CQE = 0; // calorias quemadas por ejercicio
     string frecuencia; // frecuencia en la que realizamos el ejercicio (cada dia, semana, etc)
+    double FA = 0; // factor de actividad (lo usaremos para el calculo de CQE)
 
 public:
     // Destructor
@@ -30,7 +30,7 @@ public:
     /**
      * Pure virtual method to calculate and set the Calorias Quemadas (CQ) and Frecuencia Cardiaca (FC) for the exercise.
      */
-    virtual void hallar_CQ_FC() = 0;
+    virtual void hallar_CQ_FC(double TBM, int FCM) = 0;
 
     /**
      * Pure virtual method to take user input and set the attributes of the Ejercicio object.
@@ -50,13 +50,17 @@ public:
      */
 
 
-    float getFCE() { return FCE; }
+    double getFCE() { return FCE; }
 
     /**
      * Getter method to retrieve the FCE (Calorias Quemadas por Ejercicio).
      * @return The CQE value.
      */
-    float getCQE()  { return CQE; }
+    double getCQE()  { return CQE; }
+
+    const string &getNombre() const {
+        return nombre;
+    }
 };
 
 #endif //PROYECTO_EJERCICIO_H

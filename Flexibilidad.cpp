@@ -31,33 +31,42 @@ void Flexibilidad::ingresar_datos() {
 }
 
 void Flexibilidad::mostrar_informacion() {
-    cout << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
+    cout << nombre << " durante " << duracion << " minutos con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     cout <<"Calorias quemadas : "<<CQE<<endl;
 }
 
 void Flexibilidad::exportacion_informacion() {
     ofstream archivo("../ReporteGeneral.txt",ios::app);
-    archivo << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
+    archivo << nombre << " durante " << duracion << " minutos con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     archivo <<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();
 }
 
-void Flexibilidad::hallar_CQ_FC() {
-    if (nombre == "Yoga"){
-        CQE = 0;
-        FCE = 0;
+void Flexibilidad::hallar_CQ_FC(double TBM, int FCM) {
+    if (dificultad == "fácil")
+        FA = 0.2;
+    else if (dificultad == "media")
+        FA = 0.3;
+    else
+        FA = 0.5;
+    if (nombre == "Yoga") {
+        CQE = 0.001 * duracion * FA * TBM;
+        FCE = FCM * 0.4;
+    } else if (nombre == "Danza") {
+        CQE = 0.03 * duracion * FA * TBM;
+        FCE = FCM * (rand() % 15 + 55) / 100;
+    } else if (nombre == "Arte Marcial") {
+        CQE = 0.02 * duracion * FA * TBM;
+        FCE = FCM * (rand() % 10 + 50) / 100;
+    } else if (nombre == "Estiramientos") {
+        CQE = 0.002 * duracion * FA * TBM;
+        FCE = FCM * 0.3;
     }
-    else if (nombre == "Danza"){
-        CQE = 0;
-        FCE = 0;
-    }
-    else if (nombre == "Arte Marcial"){
-        CQE = 0;
-        FCE = 0;
-    }
-    else if (nombre == "Estiramientos"){
-        CQE = 0;
-        FCE = 0;
-    }
+    if (frecuencia == "diaria")
+        CQE *= 7;
+    else if (frecuencia == "interdiaria")
+        CQE *= 3.5;
+    else if (frecuencia == "semanal")
+        CQE *= 1;
 }
 

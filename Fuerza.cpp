@@ -53,8 +53,40 @@ void Fuerza::exportacion_informacion() {
     archivo.close();
 }
 
-void Fuerza::hallar_CQ_FC() {
+void Fuerza::hallar_CQ_FC(double TBM, int FCM) {
 
+    if (nombre == "Press Banca") {
+        FA = 0.9;
+        CQE = 0.001 * peso * repeticiones * series * FA * TBM;
+        FCE = 0.5 * FCM;
+    }
+    else if (nombre == "Peso Muerto"){
+        FA = 1.1;
+        CQE = 0.001 * peso * repeticiones * series * FA * TBM;
+        FCE = 0.55 * FCM;
+    }
+    else if (nombre == "Sentadillas"){
+        FA = 1.2;
+        CQE = 0.003 * peso * repeticiones * series * FA * TBM;
+        FCE = 0.45 * FCM;
+    }
+    else if (nombre == "Dominadas"){
+        FA = 0.95;
+        CQE = 0.05 * peso * repeticiones * series * FA * TBM;
+        FCE = 0.6 * FCM;
+    }
+    else if (nombre == "Flexiones"){
+        FA = 0.8;
+        CQE = 0.04 * peso * repeticiones * series * FA * TBM;
+        FCE = 0.55 * FCM;
+    }
+    CQE = -CQE;
+    if (frecuencia == "diaria")
+        CQE *= 7;
+    else if (frecuencia == "interdiaria")
+        CQE *= 3.5;
+    else if (frecuencia == "semanal")
+        CQE *= 1;
 }
 
 

@@ -1,12 +1,101 @@
 ----------------------------------------
-Reporte Individual de asdasd asdas
-Realiza 20 repeticiones de Flexiones en 20 series con un peso de 10 Kg diariamente
-Calorias quemadas : -0.00132704
-Realiza 20 repeticiones de Sentadillas en 10 series con un peso de 5 Kg diariamente
-Calorias quemadas : -0.00132704
-Indice de masa corporal 1: 20.000000
-Indice de masa corporal 2: 21.000000
-Indice de masa corporal 3: 23.000000
-Indice de masa corporal 4: 24.000000
-Indice de masa corporal 5: 25.000000
-Frecuencia cardiaca promedio: -0.001327
+Reporte Individual de sadsa asdas
+Correr durante 10 minutos a 12 km/h diariamente
+Calorias quemadas : 1421.5
+Estiramientos durante 1 con una dificultad media semanalmente
+Calorias quemadas : 639.675
+Indice de masa corporal 1: 20.6793
+Indice de masa corporal 2: 20.5891
+Indice de masa corporal 3: 20.5063
+Indice de masa corporal 4: 20.4243
+Indice de masa corporal 5: 20.3391
+Indice de masa corporal 6: 20.2489
+Indice de masa corporal 7: 20.1587
+Indice de masa corporal 8: 20.0734
+Indice de masa corporal 9: 19.9956
+Indice de masa corporal 10: 19.9095
+Indice de masa corporal 11: 19.8349
+Indice de masa corporal 12: 19.7496
+Indice de masa corporal 13: 19.6734
+Indice de masa corporal 14: 19.5931
+Indice de masa corporal 15: 19.5176
+Indice de masa corporal 16: 19.4414
+Indice de masa corporal 17: 19.3553
+Indice de masa corporal 18: 19.2742
+Indice de masa corporal 19: 19.1996
+Indice de masa corporal 20: 19.1168
+Indice de masa corporal 21: 19.0356
+Indice de masa corporal 22: 18.9569
+Indice de masa corporal 23: 18.8757
+Indice de masa corporal 24: 18.802
+Indice de masa corporal 25: 18.7118
+Indice de masa corporal 26: 18.6347
+Indice de masa corporal 27: 18.5552
+Indice de masa corporal 28: 18.4741
+Indice de masa corporal 29: 18.3978
+Indice de masa corporal 30: 18.3142
+Indice de masa corporal 31: 18.2265
+Indice de masa corporal 32: 18.1429
+Indice de masa corporal 33: 18.0658
+Indice de masa corporal 34: 17.9863
+Indice de masa corporal 35: 17.9027
+Indice de masa corporal 36: 17.8232
+Indice de masa corporal 37: 17.7445
+Indice de masa corporal 38: 17.6666
+Indice de masa corporal 39: 17.5772
+Indice de masa corporal 40: 17.5034
+Indice de masa corporal 41: 17.4247
+Indice de masa corporal 42: 17.3477
+Indice de masa corporal 43: 17.2657
+Indice de masa corporal 44: 17.1813
+Indice de masa corporal 45: 17.0976
+Indice de masa corporal 46: 17.0157
+Indice de masa corporal 47: 16.9255
+Indice de masa corporal 48: 16.8427
+Indice de masa corporal 49: 16.7607
+Indice de masa corporal 50: 16.6755
+Indice de masa corporal 51: 16.5853
+Indice de masa corporal 52: 16.4951
+Indice de masa corporal 53: 16.4098
+Indice de masa corporal 54: 16.332
+Indice de masa corporal 55: 16.2459
+Indice de masa corporal 56: 16.1713
+Indice de masa corporal 57: 16.086
+Indice de masa corporal 58: 16.0098
+Indice de masa corporal 59: 15.9295
+Indice de masa corporal 60: 15.854
+Indice de masa corporal 61: 15.7778
+Indice de masa corporal 62: 15.6917
+Indice de masa corporal 63: 15.6106
+Indice de masa corporal 64: 15.536
+Indice de masa corporal 65: 15.4532
+Indice de masa corporal 66: 15.372
+Indice de masa corporal 67: 15.2933
+Indice de masa corporal 68: 15.2121
+Indice de masa corporal 69: 15.1384
+Indice de masa corporal 70: 15.0482
+Indice de masa corporal 71: 14.9711
+Indice de masa corporal 72: 14.8916
+Indice de masa corporal 73: 14.8105
+Indice de masa corporal 74: 14.7342
+Indice de masa corporal 75: 14.6506
+Indice de masa corporal 76: 14.5629
+Indice de masa corporal 77: 14.4793
+Indice de masa corporal 78: 14.4022
+Indice de masa corporal 79: 14.3227
+Indice de masa corporal 80: 14.2391
+Indice de masa corporal 81: 14.1595
+Indice de masa corporal 82: 14.0809
+Indice de masa corporal 83: 14.003
+Indice de masa corporal 84: 13.9136
+Indice de masa corporal 85: 13.8398
+Indice de masa corporal 86: 13.7611
+Indice de masa corporal 87: 13.6841
+Indice de masa corporal 88: 13.6021
+Indice de masa corporal 89: 13.5177
+Indice de masa corporal 90: 13.434
+Indice de masa corporal 91: 13.3152
+Indice de masa corporal 92: 13.2046
+Indice de masa corporal 93: 13.0893
+Indice de masa corporal 94: 12.9752
+Frecuencia cardiaca promedio: 96.9

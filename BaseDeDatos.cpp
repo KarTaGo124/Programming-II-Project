@@ -8,7 +8,7 @@ BaseDeDatos:: BaseDeDatos(){}
 
 void BaseDeDatos::agregar_usuario() {
     string nombre, apellido, dni, genero;
-    float peso, peso_objetivo, altura, masa_muscular,masa_muscular_objetivo, grasa_corporal;
+    float peso, peso_objetivo, altura, masa_muscular,masa_muscular_objetivo;
     int edad;
 
     do {
@@ -111,22 +111,12 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese el porcentaje de masa muscular objetivo (%peso) del usuario: ";
         cin >> masa_muscular_objetivo;
-        if (masa_muscular_objetivo < 0 || masa_muscular_objetivo > 50) {
-            cout << "El porcentaje de masa muscular objetivo no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
+        if (masa_muscular_objetivo < masa_muscular|| masa_muscular_objetivo > 50) {
+            cout << "El porcentaje de masa muscular objetivo no puede ser negativo, tampoco mayor al 50% del peso ni menor a la masa muscular inicial. Inténtelo de nuevo." << endl;
         }
-    } while (masa_muscular_objetivo < 0 || masa_muscular_objetivo > 50);
+    } while (masa_muscular_objetivo < masa_muscular || masa_muscular_objetivo > 50);
 
     cout << "¡Porcentaje de masa muscular válido ingresado correctamente!" << endl;
-
-    do {
-        cout << "Ingrese el porcentaje de grasa corporal (%peso) del usuario: ";
-        cin >> grasa_corporal;
-        if (grasa_corporal < 0 || grasa_corporal > 50) {
-            cout << "El porcentaje de grasa corporal no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
-        }
-    } while (grasa_corporal < 0 || grasa_corporal > 50);
-
-    cout << "¡Porcentaje de grasa corporal válido ingresado correctamente!" << endl;
 
     do {
         cout << "Ingrese la edad del usuario: ";
@@ -138,7 +128,7 @@ void BaseDeDatos::agregar_usuario() {
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 
-    auto *axu=new Usuario(nombre,apellido,genero,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,masa_muscular_objetivo*peso/100,grasa_corporal*peso/100);
+    auto *axu=new Usuario(nombre,apellido,genero,edad,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,masa_muscular_objetivo*peso/100);
     usuarios.push_back(axu);
 
     cout << "¡El Usuario se ha registrado correctamente!" << endl;
@@ -173,7 +163,7 @@ BaseDeDatos::~BaseDeDatos() {
 
 }
 
-const vector<Usuario *> &BaseDeDatos::getUsuarios() const {
+vector<Usuario *> &BaseDeDatos::getUsuarios() {
     return usuarios;
 }
 

@@ -12,7 +12,11 @@ void Cardio::ingresar_datos() {
     float velocidad,duracion;
     string frecuencia;
     do {
-        cout << "Ingrese la velocidad (metros por segundo): "; cin >> velocidad;
+        if (nombre != "Saltar Cuerda")
+            cout << "Ingrese la velocidad (kilometros por hora): ";
+        else
+            cout << "Ingrese la velocidad (saltos por minuto): ";
+        cin >> velocidad;
         if (velocidad<=0)
             cout << "La velocidad no puede ser negativa. Ingrésela nuevamente. ";
     } while(velocidad<=0);
@@ -35,33 +39,55 @@ void Cardio::ingresar_datos() {
 }
 
 void Cardio::mostrar_informacion() {
-    cout << nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
-    cout <<"Calorias quemadas : "<<CQE<<endl;
+    if (nombre != "Saltar Cuerda") {
+        cout << nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
+        cout <<"Calorias quemadas : "<<CQE<<endl;
+    }
+    else {
+        cout << nombre << " durante " << duracion << " a " << velocidad << " saltos por minuto " << frecuencia << "mente" << endl;
+        cout<<"Calorias quemadas : "<< CQE <<endl;
+    }
+
 }
 
 void Cardio::exportacion_informacion() {
     ofstream archivo("../ReporteGeneral.txt",ios::app);
-    archivo<< nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
-    archivo<<"Calorias quemadas : "<<CQE<<endl;
+    if (nombre != "Saltar Cuerda") {
+        archivo<< nombre << " durante " << duracion << " minutos a " << velocidad << " km/h " << frecuencia << "mente" << endl;
+        archivo<<"Calorias quemadas : "<<CQE<<endl;
+    }
+    else {
+        archivo<< nombre << " durante " << duracion << " a " << velocidad << " saltos por minuto " << frecuencia << "mente" << endl;
+        archivo<<"Calorias quemadas : "<<CQE<<endl;
+    }
+
     archivo.close();
 }
 
-void Cardio::hallar_CQ_FC() {
+void Cardio::hallar_CQ_FC(double TBM, int FCM) {
     if (nombre == "Correr") {
-        CQE = 0;
-        FCE = rand()%30+80;
+        FA = velocidad * 0.2;
+        CQE = (duracion/60) * FA * TBM ;
     }
     else if (nombre == "Ciclismo"){
-        CQE = 0;
-        FCE = 0;
+        FA = velocidad / 10;
+        CQE = (duracion/60) * FA * TBM ;
     }
     else if (nombre == "Nadar"){
-        CQE = 0;
-        FCE = 0;
+        FA = velocidad * 0.5;
+        CQE = (duracion/60) * FA * TBM;
     }
     else if (nombre == "Saltar Cuerda"){
-        CQE = 0;
-        FCE = 0;
+        FA = velocidad / 15;
+        CQE = (duracion/60) * FA * TBM ;
     }
+    FCE = FCM*(rand()%21+60)/100.0;
+    if (frecuencia == "diaria")
+        CQE *= 7;
+    else if (frecuencia == "interdiaria")
+        CQE *= 3.5;
+    else if (frecuencia == "semanal")
+        CQE *= 1;
+
 }
 

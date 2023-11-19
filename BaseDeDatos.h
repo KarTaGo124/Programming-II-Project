@@ -22,7 +22,7 @@ public:
 
     bool existeUsuarioConDNI(const string& dni);
 
-    const vector<Usuario *> &getUsuarios() const;
+    vector<Usuario *> &getUsuarios();
 
     virtual ~BaseDeDatos();
 

@@ -7,7 +7,7 @@ delimitadorIMCs = "-imcs"
 delimitadorCaloriasIndex = argumentos.index(delimitadorCalorias)
 delimitadorIMCsIndex = argumentos.index(delimitadorIMCs)
 
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(15, 8))
 def format_ticks(value, _):
     return f'{value:.2f}'
 if delimitadorCalorias in argumentos:

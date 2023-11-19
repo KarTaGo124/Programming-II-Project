@@ -4,16 +4,12 @@
 #include "BaseDeDatos.h"
 #include "Menus.h"
 
-// falta implementar las graficas(nose)
-// la calculadora de calorias(esto no se) y frecuencia cardiaca(podria ser un rand)
-
-// implementar un mensaje que avise cuando llegas al peso objetivo
 
 int main() {
     srand(time(nullptr));
     auto* baseDeDatos = new BaseDeDatos();  // Crear una instancia de la base de datos
     int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, opcion8, numero_semanas;
-    float calorias_semanales = 0;
+    double calorias_semanales = 0;
     string cadena1, cadena2, comando_string;
 
     do {
@@ -25,9 +21,12 @@ int main() {
             case 2:
                 opcion2 = menuUsuarios(baseDeDatos->getUsuarios());
                 do {
-                    cout << "Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
-                } while (numero_semanas < 4);
-                calorias_semanales = 0;
+                    cout << "---- Cuantas semanas durará la rutina (como minimo 2): "; cin >> numero_semanas;
+                } while (numero_semanas < 2);
+                if (baseDeDatos->getUsuarios()[opcion2-1]->getPesoObjetivo() < baseDeDatos->getUsuarios()[opcion2-1]->getPeso())
+                    cout << "----- Te recomendamos realizar ejercicios de Cardio y un poco de Flexibilidad -----" << endl;
+                else
+                    cout << "----- Te recomendamos realizar ejercicios de Fuerza y un poco de Cardio -----" << endl;
                 do{
                     opcion3 = menuEjercicios();
                     switch (opcion3) {
@@ -53,7 +52,8 @@ int main() {
                                         aux_cardio->ingresar_datos();
                                         break;
                                 }
-                                aux_cardio->hallar_CQ_FC();
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/3.0); // si hace ejercicios de fuerza aumenta poco su masa muscular
+                                aux_cardio->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion4!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_cardio);
                                 cout << "-----CONSEJO : ";
@@ -87,7 +87,8 @@ int main() {
                                         aux_fuerza->ingresar_datos();
                                         break;
                                 }
-                                aux_fuerza->hallar_CQ_FC();
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/2.0); // si hace ejercicios de fuerza aumenta su masa muscular
+                                aux_fuerza->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion5!=6)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_fuerza);
                                 cout << "-----CONSEJO : ";
@@ -117,7 +118,8 @@ int main() {
                                         aux_flexibilidad->ingresar_datos();
                                         break;
                                 }
-                                aux_flexibilidad->hallar_CQ_FC();
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/4.0); // si hace ejercicios de fuerza aumenta muy poco su masa muscular
+                                aux_flexibilidad->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion6!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_flexibilidad);
                                 cout << "-----CONSEJO : ";
@@ -127,11 +129,15 @@ int main() {
                             break;
                     }
                 } while (opcion3!=4);
+                calorias_semanales = 0;
                 for (auto i : baseDeDatos->getUsuarios()[opcion2-1]->getEjercicios()) {
                     calorias_semanales += i->getCQE();
                 }
                 baseDeDatos->getUsuarios()[opcion2-1]->getHistorialCaloriasQuemadas().push_back(calorias_semanales);
                 baseDeDatos->getUsuarios()[opcion2-1]->calorias_quemadas_rango(calorias_semanales,numero_semanas);
+                baseDeDatos->getUsuarios()[opcion2-1]->actulizaciones_imcs();
+                baseDeDatos->getUsuarios()[opcion2-1]->meta_peso();
+                baseDeDatos->getUsuarios()[opcion2-1]->meta_masa_muscular();
                 break;
             case 3:
                 opcion8 = menuUsuarios(baseDeDatos->getUsuarios());

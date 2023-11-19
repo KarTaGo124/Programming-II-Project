@@ -26,7 +26,7 @@ public:
     void ingresar_datos() override;
     void mostrar_informacion() override;
     void exportacion_informacion() override;
-    void hallar_CQ_FC() override;
+    void hallar_CQ_FC(double TBM, int FCM) override;
 
 
 };
