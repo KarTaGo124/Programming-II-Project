@@ -141,9 +141,11 @@ void BaseDeDatos::reporte_general() {
     }
 }
 void BaseDeDatos::  exportarReportes(){
+    ofstream archivo("../ReporteGeneral.txt",ios::out);
     for(auto i: usuarios){
         i->reporte_individual_exportacion();
     }
+    archivo.close();
 }
 
 bool BaseDeDatos::existeUsuarioConDNI(const string& dni) {

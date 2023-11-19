@@ -11,7 +11,6 @@ int main() {
     int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, opcion8, numero_semanas;
     double calorias_semanales = 0;
     string cadena1, cadena2, comando_string;
-
     do {
         opcion1 = menuPrincipal();
         switch (opcion1) {
@@ -21,8 +20,8 @@ int main() {
             case 2:
                 opcion2 = menuUsuarios(baseDeDatos->getUsuarios());
                 do {
-                    cout << "---- Cuantas semanas durará la rutina (como minimo 2): "; cin >> numero_semanas;
-                } while (numero_semanas < 2);
+                    cout << "---- Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
+                } while (numero_semanas < 4);
                 if (baseDeDatos->getUsuarios()[opcion2-1]->getPesoObjetivo() < baseDeDatos->getUsuarios()[opcion2-1]->getPeso())
                     cout << "----- Te recomendamos realizar ejercicios de Cardio y un poco de Flexibilidad -----" << endl;
                 else

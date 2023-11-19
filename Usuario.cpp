@@ -61,14 +61,12 @@ void Usuario::reporte_individual() {
 }
 
 void Usuario::reporte_individual_exportacion() {
-    ofstream archivo("../ReporteGeneral.txt",ios::out);
+    ofstream archivo("../ReporteGeneral.txt",ios::app);
     archivo<< "----------------------------------------" << endl << "Reporte Individual de " <<
            nombre << " " << apellido << endl;
-    archivo.close();
     for (auto i: ejercicios){
         i->exportacion_informacion();
     }
-    archivo.open("../ReporteGeneral.txt",ios::app);
     archivo << "IMC inicial: " << peso*pow(altura/100,2) << endl;
     for (int i = 0; i < historial_de_IMCS.size(); i++){
         archivo<<"Indice de masa corporal " << i+1 << + ": " << historial_de_IMCS[i] <<endl;
@@ -115,6 +113,7 @@ void Usuario::calorias_quemadas_rango(double c, int n) {
 
 void Usuario::actulizaciones_imcs() {
     double imc;
+    historial_de_IMCS.clear();
     for (int i = 0; i < historial_calorias_quemadas.size(); i++) {
         peso -= historial_calorias_quemadas[i] / 15000.0;
         imc = peso/pow(altura/100.0,2);

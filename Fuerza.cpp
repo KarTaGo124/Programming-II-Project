@@ -57,17 +57,17 @@ void Fuerza::hallar_CQ_FC(double TBM, int FCM) {
 
     if (nombre == "Press Banca") {
         FA = 0.9;
-        CQE = 0.001 * peso * repeticiones * series * FA * TBM;
+        CQE = 0.01 * peso * repeticiones * series * FA * TBM;
         FCE = 0.5 * FCM;
     }
     else if (nombre == "Peso Muerto"){
         FA = 1.1;
-        CQE = 0.001 * peso * repeticiones * series * FA * TBM;
+        CQE = 0.01 * peso * repeticiones * series * FA * TBM;
         FCE = 0.55 * FCM;
     }
     else if (nombre == "Sentadillas"){
         FA = 1.2;
-        CQE = 0.003 * peso * repeticiones * series * FA * TBM;
+        CQE = 0.03 * peso * repeticiones * series * FA * TBM;
         FCE = 0.45 * FCM;
     }
     else if (nombre == "Dominadas"){
