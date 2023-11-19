@@ -71,18 +71,18 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese la altura (cm) del usuario: ";
         cin >> altura;
-        if (altura < 0 || altura > 250) {
-            cout << "La altura no puede ser negativa. Inténtelo de nuevo." << endl;
+        if (altura < 100 || altura > 250) {
+            cout << "La altura no puede ser menor 100 cm ni mayor a 250 cm. Inténtelo de nuevo." << endl;
         }
-    } while (altura < 0 || altura > 250);
+    } while (altura < 100 || altura > 250);
 
     cout << "¡Altura válida ingresada correctamente!" << endl;
 
     do {
         cout << "Ingrese el peso (kg) del usuario: ";
         cin >> peso;
-        if (peso < 0 || peso > 200) {
-            cout << "El peso no puede ser negativo. Inténtelo de nuevo." << endl;
+        if (peso < 30 || peso > 200) {
+            cout << "El peso no puede ser menor a 30 kg ni mayor a 200 kg. Inténtelo de nuevo." << endl;
         }
     } while (peso < 30 || peso > 200);
 
@@ -91,8 +91,8 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese el peso objetivo (kg) del usuario: ";
         cin >> peso_objetivo;
-        if (peso_objetivo < 0 || peso_objetivo > 200) {
-            cout << "El peso objetivo no puede ser negativo. Inténtelo de nuevo." << endl;
+        if (peso_objetivo < 30 || peso_objetivo > 200) {
+            cout << "El peso objetivo no puede ser menor a 30 Kg ni mayor a 200 kg. Inténtelo de nuevo." << endl;
         }
     } while (peso_objetivo < 30 || peso_objetivo > 200);
 
@@ -122,7 +122,7 @@ void BaseDeDatos::agregar_usuario() {
         cout << "Ingrese la edad del usuario: ";
         cin >> edad;
         if (edad < 15 || edad>60) {
-            cout << "Tienes que tener al menos 15 años para usar el programa. Inténtelo de nuevo." << endl;
+            cout << "Tienes que tener al menos 15 años y como maximo 60 años para usar el programa. Inténtelo de nuevo." << endl;
         }
     } while (edad < 15 || edad>60);
 
