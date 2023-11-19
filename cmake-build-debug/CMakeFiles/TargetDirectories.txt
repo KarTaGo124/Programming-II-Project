@@ -1,0 +1,4 @@
+C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/PROYECTO.dir
+C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/borrador.dir
+C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
