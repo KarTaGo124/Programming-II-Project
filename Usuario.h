@@ -5,7 +5,6 @@
 #define PROYECTO_USUARIO_H
 
 #include "Ejercicio.h"
-
 /**
  * @file Usuario.h
  * Declaration of the Usuario class.
@@ -22,7 +21,7 @@ private:
     int edad;                            ///< The age of the user.
     string DNI;                          ///< The DNI (Documento Nacional de Identidad) of the user.
     string genero;                       ///< The gender of the user.
-    float peso, peso_objetivo;           ///< The weight and weight goal of the user.
+    float peso, peso_objetivo,peso_inicial;           ///< The weight and weight goal of the user.
     float altura;                        ///< The height of the user.
     float masa_muscular;                 ///< The muscular mass of the user.
     float grasa_coporal;                 ///< The body fat percentage of the user.
@@ -108,7 +107,13 @@ public:
      * @return A constant reference to the apellido attribute.
      */
     const string &getApellido() const;
+
+    vector<float> &getHistorialCaloriasQuemadas();
+
+    vector<Ejercicio *> &getEjercicios();
 };
+
+
 
 
 #endif //PROYECTO_USUARIO_H

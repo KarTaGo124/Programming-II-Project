@@ -66,3 +66,4 @@ void Flexibilidad::hallar_CQ_FC() {
         FCE = 0;
     }
 }
+

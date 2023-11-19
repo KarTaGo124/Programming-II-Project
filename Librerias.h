@@ -9,7 +9,7 @@
 #include <iostream>  ///< Standard Input/Output Stream Library.
 #include <cmath>     ///< Mathematical functions library.
 #include <vector>    ///< Vector container library.
-
+#include <fstream>
 using namespace std;
 
 #endif //PROYECTO_LIBRERIAS_H

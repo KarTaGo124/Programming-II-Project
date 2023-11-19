@@ -110,6 +110,8 @@ float Usuario::frecuencia_cardiaca_prom() {
  * user.reporte_individual(); // Displays a report of each exercise for the user.
  * @endcode
  */
+
+
 void Usuario::reporte_individual() {
     cout << "----------------------------------------" << endl << "Reporte Individiual de " <<
     nombre << " " << apellido << endl;
@@ -120,6 +122,42 @@ void Usuario::reporte_individual() {
         cout<<"Indice de masa corporal : "<<i+1<< calcular_IMC()<<endl;
     }
     cout<<"Frecuencia cardiaca promedio: "<< frecuencia_cardiaca_prom()<<endl;
+}
+
+void Usuario::reporte_individual_exportacion() {
+    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::out);
+    archivo<< "----------------------------------------" << endl << "Reporte Individiual de " <<
+           nombre << " " << apellido << endl;
+    archivo.close();
+    for (auto i: ejercicios){
+        i->exportacion_informacion();
+    }
+    archivo.open("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    for (auto i: historial_de_IMCS){
+        archivo<<"Indice de masa corporal : "<<i+1<< calcular_IMC()<<endl;
+    }
+    archivo<<"Frecuencia cardiaca promedio: "<< frecuencia_cardiaca_prom()<<endl;
+    archivo.close();
+
+}
+
+void Usuario::peso_ideal() {
+    if (peso_inicial < peso_objetivo) {
+        if (peso >= peso_objetivo)
+            cout << "--------Has alcanzado tu peso objetivo, Felicitaciones.--------" << endl;
+    }
+
+    else if(peso_inicial>peso_objetivo){
+        if(peso<=peso_objetivo)
+            cout<<"-------Has alcanzado tu peso objetivo, Felicitaciones.--------"<<endl;
+    }
+
+}
+
+void Usuario::calorias_quemadas_rango(float c, int n) {
+    for (int i = 0; i < n-1; i++) {
+        historial_calorias_quemadas.push_back(c * ((100-(rand()%10+1))/100));
+    }
 }
 
 /**
@@ -161,4 +199,14 @@ const string &Usuario::getNombre() const {
 const string &Usuario::getApellido() const {
     return apellido;
 }
+
+vector<float> &Usuario::getHistorialCaloriasQuemadas() {
+    return historial_calorias_quemadas;
+}
+
+vector<Ejercicio *> &Usuario::getEjercicios()  {
+    return ejercicios;
+}
+
+
 

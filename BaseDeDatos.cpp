@@ -121,10 +121,10 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese la edad del usuario: ";
         cin >> edad;
-        if (edad < 15) {
+        if (edad < 15 || edad>60) {
             cout << "Tienes que tener al menos 15 años para usar el programa. Inténtelo de nuevo." << endl;
         }
-    } while (edad < 15);
+    } while (edad < 15 || edad>60);
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 

@@ -17,7 +17,7 @@ int menuPrincipal() {
     do {
         cout << "\t MENU PRINCIPAL" << endl
              << "1. Ingresar datos de un nuevo Usuario" << endl
-             << "2. Ingresar rutina de un Usuario" << endl
+             << "2. Ingresar la rutina semanal de un Usuario" << endl
              << "3. Mostrar gráficas de progreso de un Usuario" << endl
              << "4. Mostrar reporte individual de un Usuario" << endl
              << "5. Mostrar reporte general de todos los Usuarios" << endl
