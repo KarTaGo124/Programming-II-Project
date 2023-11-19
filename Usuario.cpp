@@ -55,18 +55,18 @@ void Usuario::reporte_individual() {
 }
 
 void Usuario::reporte_individual_exportacion() {
-    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::out);
+    ofstream archivo("../ReporteGeneral.txt",ios::out);
     archivo<< "----------------------------------------" << endl << "Reporte Individual de " <<
            nombre << " " << apellido << endl;
     archivo.close();
     for (auto i: ejercicios){
         i->exportacion_informacion();
     }
-    archivo.open("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
-    for (auto i: historial_de_IMCS){
-        archivo<<"Indice de masa corporal : "<<i+1<< calcular_IMC()<<endl;
+    archivo.open("../ReporteGeneral.txt",ios::app);
+    for (int i = 0; i < historial_de_IMCS.size(); i++){
+        archivo<<"Indice de masa corporal " + to_string(i+1) + ": " +to_string(historial_de_IMCS[i]) <<endl;
     }
-    archivo<<"Frecuencia cardiaca promedio: "<< frecuencia_cardiaca_prom()<<endl;
+    archivo<<"Frecuencia cardiaca promedio: "<< to_string(frecuencia_cardiaca_prom())<<endl;
     archivo.close();
 
 }

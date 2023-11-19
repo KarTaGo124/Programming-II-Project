@@ -40,7 +40,7 @@ void Cardio::mostrar_informacion() {
 }
 
 void Cardio::exportacion_informacion() {
-    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    ofstream archivo("../ReporteGeneral.txt",ios::app);
     archivo<< nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
     archivo<<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();
@@ -49,7 +49,7 @@ void Cardio::exportacion_informacion() {
 void Cardio::hallar_CQ_FC() {
     if (nombre == "Correr") {
         CQE = 0;
-        FCE = rand();
+        FCE = rand()%30+80;
     }
     else if (nombre == "Ciclismo"){
         CQE = 0;

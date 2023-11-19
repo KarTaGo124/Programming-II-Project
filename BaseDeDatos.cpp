@@ -117,6 +117,7 @@ void BaseDeDatos::agregar_usuario() {
     } while (masa_muscular_objetivo < 0 || masa_muscular_objetivo > 50);
 
     cout << "¡Porcentaje de masa muscular válido ingresado correctamente!" << endl;
+
     do {
         cout << "Ingrese el porcentaje de grasa corporal (%peso) del usuario: ";
         cin >> grasa_corporal;

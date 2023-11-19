@@ -1,5 +1,12 @@
 ----------------------------------------
-Reporte Individual de asd aasdas
-Correr durante 20 minutos a 20 m/s diariamente
-Calorias quemadas : 0
-Frecuencia cardiaca promedio: 9551
+Reporte Individual de asdasd asdas
+Realiza 20 repeticiones de Flexiones en 20 series con un peso de 10 Kg diariamente
+Calorias quemadas : -0.00132704
+Realiza 20 repeticiones de Sentadillas en 10 series con un peso de 5 Kg diariamente
+Calorias quemadas : -0.00132704
+Indice de masa corporal 1: 20.000000
+Indice de masa corporal 2: 21.000000
+Indice de masa corporal 3: 23.000000
+Indice de masa corporal 4: 24.000000
+Indice de masa corporal 5: 25.000000
+Frecuencia cardiaca promedio: -0.001327

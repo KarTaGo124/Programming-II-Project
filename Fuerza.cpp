@@ -47,7 +47,7 @@ void Fuerza::mostrar_informacion() {
 }
 
 void Fuerza::exportacion_informacion() {
-    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    ofstream archivo("../ReporteGeneral.txt",ios::app);
     archivo<< "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de " << peso << " Kg " << frecuencia << "mente" << endl;
     archivo<<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();

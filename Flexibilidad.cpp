@@ -36,7 +36,7 @@ void Flexibilidad::mostrar_informacion() {
 }
 
 void Flexibilidad::exportacion_informacion() {
-    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    ofstream archivo("../ReporteGeneral.txt",ios::app);
     archivo << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     archivo <<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();
