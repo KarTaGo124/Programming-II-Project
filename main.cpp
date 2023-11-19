@@ -13,7 +13,9 @@ int main() {
     srand(time(nullptr));
     auto* baseDeDatos = new BaseDeDatos();  // Crear una instancia de la base de datos
 
-    int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, numero_semanas;
+    int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, opcion8, numero_semanas;
+
+    string cadena, comando_string;
 
     do {
         opcion1 = menuPrincipal();
@@ -133,7 +135,10 @@ int main() {
                 } while (opcion3!=4);
                 break;
             case 3:
-                system("python Graficas.py");
+                opcion8 = menuUsuarios(baseDeDatos->getUsuarios());
+                cadena = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_calorias();
+                comando_string = "python Graficas.py -datos " + cadena;
+                system(comando_string.c_str());
                 break;
             case 4:
                 opcion7 = menuUsuarios(baseDeDatos->getUsuarios());

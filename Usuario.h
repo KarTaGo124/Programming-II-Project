@@ -27,7 +27,7 @@ private:
     float grasa_coporal;                 ///< The body fat percentage of the user.
     vector<Ejercicio*> ejercicios;       ///< List of exercises performed by the user.
     vector<float> historial_de_IMCS;    ///< Historical weight records of the user.
-    vector<float> historial_calorias_quemadas;  ///< Historical calorie-burning records of the user.
+    vector<float> historial_calorias_quemadas = {100.2, 200.5,500,300};  ///< Historical calorie-burning records of the user.
     vector<float> historial_masa_muscular;     ///< Historical muscular mass records of the user.
 
 public:
@@ -89,6 +89,8 @@ public:
     void peso_ideal();
 
     void calorias_quemadas_rango(float c, int n);
+
+    string to_string_historial_calorias();
 
     /**
      * Getter function for the DNI attribute.

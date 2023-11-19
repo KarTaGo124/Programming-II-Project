@@ -1,7 +1,5 @@
 ----------------------------------------
-Reporte Individiual de asdasasd asdads
-Correr durante 10 minutos a 10 m/s diariamente
+Reporte Individual de asd aasdas
+Correr durante 20 minutos a 20 m/s diariamente
 Calorias quemadas : 0
-Nadar durante 20 minutos a 20 m/s semanalmente
-Calorias quemadas : 0
-Frecuencia cardiaca promedio: 6718.5
+Frecuencia cardiaca promedio: 9551

@@ -113,7 +113,7 @@ float Usuario::frecuencia_cardiaca_prom() {
 
 
 void Usuario::reporte_individual() {
-    cout << "----------------------------------------" << endl << "Reporte Individiual de " <<
+    cout << "----------------------------------------" << endl << "Reporte Individual de " <<
     nombre << " " << apellido << endl;
     for (auto i: ejercicios){
         i->mostrar_informacion();
@@ -126,7 +126,7 @@ void Usuario::reporte_individual() {
 
 void Usuario::reporte_individual_exportacion() {
     ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::out);
-    archivo<< "----------------------------------------" << endl << "Reporte Individiual de " <<
+    archivo<< "----------------------------------------" << endl << "Reporte Individual de " <<
            nombre << " " << apellido << endl;
     archivo.close();
     for (auto i: ejercicios){
@@ -160,6 +160,13 @@ void Usuario::calorias_quemadas_rango(float c, int n) {
     }
 }
 
+string Usuario::to_string_historial_calorias() {
+    string texto;
+    for (int i = 0; i < historial_calorias_quemadas.size(); i++) {
+        texto += to_string(historial_calorias_quemadas[i]) + " ";
+    }
+    return texto;
+}
 /**
  * Getter function for the DNI attribute.
  * @return A constant reference to the DNI attribute.
