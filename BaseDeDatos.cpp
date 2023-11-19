@@ -8,7 +8,7 @@ BaseDeDatos:: BaseDeDatos(){}
 
 void BaseDeDatos::agregar_usuario() {
     string nombre, apellido, dni, genero;
-    float peso, peso_objetivo, altura, masa_muscular, grasa_corporal;
+    float peso, peso_objetivo, altura, masa_muscular,masa_muscular_objetivo, grasa_corporal;
     int edad;
 
     do {
@@ -102,12 +102,21 @@ void BaseDeDatos::agregar_usuario() {
         cout << "Ingrese el porcentaje de masa muscular (%peso) del usuario: ";
         cin >> masa_muscular;
         if (masa_muscular < 0 || masa_muscular > 50) {
-            cout << "El porcentaje de masa muscular no puede ser negativa ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
+            cout << "El porcentaje de masa muscular no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
         }
     } while (masa_muscular < 0 || masa_muscular > 50);
 
     cout << "¡Porcentaje de masa muscular válido ingresado correctamente!" << endl;
 
+    do {
+        cout << "Ingrese el porcentaje de masa muscular objetivo (%peso) del usuario: ";
+        cin >> masa_muscular_objetivo;
+        if (masa_muscular_objetivo < 0 || masa_muscular_objetivo > 50) {
+            cout << "El porcentaje de masa muscular objetivo no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
+        }
+    } while (masa_muscular_objetivo < 0 || masa_muscular_objetivo > 50);
+
+    cout << "¡Porcentaje de masa muscular válido ingresado correctamente!" << endl;
     do {
         cout << "Ingrese el porcentaje de grasa corporal (%peso) del usuario: ";
         cin >> grasa_corporal;
@@ -128,7 +137,7 @@ void BaseDeDatos::agregar_usuario() {
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 
-    auto *axu=new Usuario(nombre,apellido,genero,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,grasa_corporal*peso/100);
+    auto *axu=new Usuario(nombre,apellido,genero,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,masa_muscular_objetivo*peso/100,grasa_corporal*peso/100);
     usuarios.push_back(axu);
 
     cout << "¡El Usuario se ha registrado correctamente!" << endl;

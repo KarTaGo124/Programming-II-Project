@@ -11,7 +11,7 @@ private:
     float duracion; // minutos
     float velocidad; // metros por segundo
 public:
-    // constructor
+    // constructores
     Cardio();
     Cardio(string nombre);
     // destructor

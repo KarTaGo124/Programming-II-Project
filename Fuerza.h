@@ -12,32 +12,22 @@
  */
 class Fuerza : public Ejercicio {
 private:
-    int repeticiones;
-    int series;
-    float tempEjercicio;
-    int pesa; // peso con el que realizamos el ejercicio de fuerza
+    // atributos
+    int repeticiones; // numero de repeticiones en una seria
+    int series; // numero de series
+    float peso; // peso (kg) que usa en el ejercicio
 public:
-
+    // constructores
     Fuerza();
-
     Fuerza(string nombre);
-
+    // destructor
+    virtual ~Fuerza();
+    // metodos redefinidos
     void ingresar_datos() override;
-    /**
-     * Displays information about the Fuerza exercise.
-     * Overrides the corresponding method in the base class (Ejercicio).
-     */
     void mostrar_informacion() override;
-
     void exportacion_informacion() override;
-
     void hallar_CQ_FC() override;
 
-    /**
-     * Virtual destructor for the Fuerza class.
-     * Provides a base class type to allow proper destruction of derived class objects.
-     */
-    virtual ~Fuerza();
 
 };
 

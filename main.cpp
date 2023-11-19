@@ -12,10 +12,9 @@
 int main() {
     srand(time(nullptr));
     auto* baseDeDatos = new BaseDeDatos();  // Crear una instancia de la base de datos
-
     int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, opcion8, numero_semanas;
-
-    string cadena, comando_string;
+    float calorias_semanales = 0;
+    string cadena1, cadena2, comando_string;
 
     do {
         opcion1 = menuPrincipal();
@@ -28,6 +27,7 @@ int main() {
                 do {
                     cout << "Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
                 } while (numero_semanas < 4);
+                calorias_semanales = 0;
                 do{
                     opcion3 = menuEjercicios();
                     switch (opcion3) {
@@ -126,18 +126,18 @@ int main() {
                             } while(opcion6!=5);
                             break;
                     }
-                    float calorias_semanales = 0;
-                    for (auto i : baseDeDatos->getUsuarios()[opcion2-1]->getEjercicios()) {
-                        calorias_semanales += i->getCQE();
-                    }
-                    baseDeDatos->getUsuarios()[opcion2-1]->getHistorialCaloriasQuemadas().push_back(calorias_semanales);
-                    baseDeDatos->getUsuarios()[opcion2-1]->calorias_quemadas_rango(calorias_semanales,numero_semanas);
                 } while (opcion3!=4);
+                for (auto i : baseDeDatos->getUsuarios()[opcion2-1]->getEjercicios()) {
+                    calorias_semanales += i->getCQE();
+                }
+                baseDeDatos->getUsuarios()[opcion2-1]->getHistorialCaloriasQuemadas().push_back(calorias_semanales);
+                baseDeDatos->getUsuarios()[opcion2-1]->calorias_quemadas_rango(calorias_semanales,numero_semanas);
                 break;
             case 3:
                 opcion8 = menuUsuarios(baseDeDatos->getUsuarios());
-                cadena = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_calorias();
-                comando_string = "python Graficas.py -datos " + cadena;
+                cadena1 = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_calorias();
+                cadena2 = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_imcs();
+                comando_string = "python ../Grafica.py -calorias " + cadena1 + " -imcs " + cadena2;
                 system(comando_string.c_str());
                 break;
             case 4:

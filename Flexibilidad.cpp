@@ -3,10 +3,7 @@
 
 #include "Flexibilidad.h"
 Flexibilidad:: Flexibilidad(){}
-
-Flexibilidad::Flexibilidad(string nombre){
-    this->nombre = nombre;
-}
+Flexibilidad::Flexibilidad(string nombre){this->nombre = nombre;}
 
 Flexibilidad::~Flexibilidad() {cout<<"Ejercicio de Flexibilidad destruido"<<endl;}
 
@@ -15,7 +12,7 @@ void Flexibilidad::ingresar_datos() {
     string dificultad,frecuencia;
     do{
         cout<<"Ingrese la duración (minutos): ";cin>>duracion;
-    } while (duracion<0);
+    } while (duracion<=0);
     do{
         cout<<"Dificultad (fácil/media/díficil): "; cin>>dificultad;
         if (dificultad != "fácil" and dificultad != "media" and dificultad!= "díficil")
@@ -31,14 +28,11 @@ void Flexibilidad::ingresar_datos() {
     this->duracion=duracion;
     this->dificultad=dificultad;
     this ->frecuencia=frecuencia;
-
 }
 
 void Flexibilidad::mostrar_informacion() {
-
     cout << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     cout <<"Calorias quemadas : "<<CQE<<endl;
-
 }
 
 void Flexibilidad::exportacion_informacion() {
@@ -46,8 +40,8 @@ void Flexibilidad::exportacion_informacion() {
     archivo << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     archivo <<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();
-
 }
+
 void Flexibilidad::hallar_CQ_FC() {
     if (nombre == "Yoga"){
         CQE = 0;
