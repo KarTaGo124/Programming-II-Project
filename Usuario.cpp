@@ -120,6 +120,7 @@ void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
     } while (true);
 
     cout << "Usuario validado correctamente." << endl;
+
 }
 
 /**
@@ -190,6 +191,10 @@ void Usuario::reporte_individual() {
     for (auto i: ejercicios){
         i->mostrar_informacion();
     }
+    for (auto i: historial_de_IMCS){
+        cout<<"Indice de masa corporal : "<<i+1<< calcular_IMC()<<endl;
+    }
+    cout<<"Frecuencia cardiaca promedio: "<< frecuencia_cardiaca_prom()<<endl;
 }
 
 /**

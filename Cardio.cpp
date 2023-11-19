@@ -37,6 +37,7 @@ void Cardio::ingresar_datos() {
 void Cardio::mostrar_informacion() {
 
     cout << nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
+    cout <<"Calorias quemadas : "<<CQE<<endl;
 }
 void Cardio::hallar_CQ_FC() {
     if (nombre == "Correr") {

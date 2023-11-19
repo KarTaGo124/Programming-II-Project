@@ -116,3 +116,55 @@ int menuFlexibilidad() {
     } while (option < 1 || option > 5);
     return option;
 }
+
+/**
+ * Displays general health and fitness tips randomly chosen from a predefined list.
+ */
+void Consejos_Generales() {
+    vector<string> consejos_generales = {
+            "Prioriza alimentos frescos y naturales.",
+            "Consume una variedad de colores en tus comidas para obtener diversos nutrientes.",
+            "Bebe suficiente agua a lo largo del día.",
+            "Controla las porciones para evitar el exceso de calorías.",
+            "Incluye fuentes de proteínas magras en cada comida.",
+            "Aumenta la ingesta de fibra con frutas, verduras y granos enteros.",
+            "Limita el consumo de alimentos procesados y ricos en azúcares añadidos.",
+            "Come conscientemente, disfrutando cada bocado.",
+            "Cocina en casa para tener control sobre los ingredientes.",
+            "Planifica tus comidas con antelación para evitar decisiones impulsivas.",
+            "Incorpora actividad física regular en tu rutina diaria.",
+            "Duerme lo suficiente para permitir la recuperación del cuerpo.",
+            "Practica técnicas de manejo del estrés, como la meditación o el yoga.",
+            "Haz chequeos de salud periódicos y exámenes preventivos.",
+            "Mantén una postura adecuada para prevenir problemas de espalda.",
+            "Evita el tabaco y limita el consumo de alcohol.",
+            "Establece límites en el tiempo frente a pantallas electrónicas.",
+            "Mantén una buena higiene personal para prevenir enfermedades.",
+            "Cultiva relaciones sociales positivas para el bienestar emocional.",
+            "Escucha a tu cuerpo y descansa cuando sea necesario.",
+            "Encuentra una actividad física que disfrutes para hacer el ejercicio más divertido.",
+            "Establece metas realistas y alcanzables para mantenerte motivado.",
+            "Varía tu rutina de ejercicios para evitar el aburrimiento y estimular diferentes músculos.",
+            "Incluye tanto entrenamiento de fuerza como cardiovascular en tu programa.",
+            "Encuentra un compañero de entrenamiento para mayor apoyo y responsabilidad.",
+            "Programa tus entrenamientos como citas inquebrantables en tu agenda.",
+            "Celebra tus logros, incluso los pequeños avances.",
+            "Escucha música motivadora durante tus sesiones de entrenamiento.",
+            "Ajusta tu rutina según tu nivel de energía y estado de ánimo.",
+            "No te desanimes por contratiempos; aprende de ellos y sigue adelante.",
+            "Visualiza tus metas regularmente para mantener la motivación.",
+            "Recompénsate a ti mismo por tus logros, incluso los pequeños.",
+            "Encuentra inspiración en modelos a seguir que hayan alcanzado objetivos similares.",
+            "Mantén un registro de tus progresos para ver cómo avanzas.",
+            "Únete a comunidades en línea o grupos de ejercicio para compartir experiencias.",
+            "Establece un horario regular para tu actividad física.",
+            "Experimenta con nuevas actividades para evitar la monotonía.",
+            "Rodéate de personas que te apoyen en tus objetivos de salud y fitness.",
+            "Practica la gratitud, reconociendo los beneficios que has experimentado.",
+            "Recuerda que la consistencia es clave; los cambios toman tiempo, pero valen la pena.",
+            };
+    int aleatorio= rand()%consejos_generales.size();
+    cout<<consejos_generales[aleatorio];
+}
+
+#endif //PROYECTO_MENUS_H
