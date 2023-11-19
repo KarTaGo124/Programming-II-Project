@@ -17,7 +17,6 @@ protected:
     float FCE; // frecuencia cardiaca por ejercicio
     float CQE; // calorias quemadas por ejercicio
     string frecuencia; // frecuencia en la que realizamos el ejercicio (cada dia, semana, etc)
-    vector<int> frecueciasCardiacas;
 
 public:
     // Destructor
@@ -53,6 +52,10 @@ public:
 
     float getFCE() { return FCE; }
 
+    /**
+     * Getter method to retrieve the FCE (Calorias Quemadas por Ejercicio).
+     * @return The CQE value.
+     */
     float getCQE()  { return CQE; }
 };
 
