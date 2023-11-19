@@ -1,6 +1,5 @@
 #ifndef PROYECTO_FUERZA_H
 #define PROYECTO_FUERZA_H
-
 #include "Ejercicio.h"
 
 /**
@@ -13,31 +12,22 @@
  */
 class Fuerza : public Ejercicio {
 private:
-    int repeticiones;  ///< The number of repetitions for the strength exercise.
-    int series;        ///< The number of series for the strength exercise.
-    float peso;        ///< The weight used for the strength exercise.
-
+    int repeticiones;
+    int series;
+    float tempEjercicio;
+    int pesa; // peso con el que realizamos el ejercicio de fuerza
 public:
-    // Constructors
-    /**
-     * Parameterized constructor for the Fuerza class.
-     * Initializes the Fuerza object with the given name.
-     * @param nombre The name of the strength exercise.
-     */
-    Fuerza(string nombre);
 
-    /**
-     * Default constructor for the Fuerza class.
-     */
     Fuerza();
 
     Fuerza(string nombre);
 
+    void ingresar_datos() override;
     /**
-     * Takes user input to set the attributes of the Fuerza object.
+     * Displays information about the Fuerza exercise.
      * Overrides the corresponding method in the base class (Ejercicio).
      */
-    void ingresar_datos() override;
+    void mostrar_informacion() override;
 
     void exportacion_informacion() override;
 

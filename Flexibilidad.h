@@ -15,13 +15,7 @@ class Flexibilidad : public Ejercicio{
 private:
     int duracion{};       ///< The duration of the flexibility exercise.
     string dificultad;  ///< The difficulty level of the flexibility exercise.
-
-
 public:
-    // Constructors
-    /**
-     * Default constructor for the Flexibilidad class.
-     */
     Flexibilidad();
     Flexibilidad(string nombre);
     virtual ~Flexibilidad();

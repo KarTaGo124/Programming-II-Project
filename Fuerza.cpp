@@ -1,20 +1,12 @@
 #include "Fuerza.h"
 
-/**
- * Default constructor for the Fuerza class.
- */
 Fuerza::Fuerza() {}
 Fuerza::Fuerza(string nombre) {
     this -> nombre = nombre;
 }
 
-/**
- * Destructor for the Fuerza class.
- * Displays a message when an instance of the Fuerza class is destroyed.
- */
-Fuerza::~Fuerza() {cout<<"Ejercicio de Fuerza destruido"<<endl;}
 
-/**
+/*
  * Takes user input to set the attributes of the Fuerza object.
  * Ensures that the entered data for repetitions, series, and weight is non-negative.
  * The user is also prompted to input the exercise frequency (diaria/interdiaria/semanal).
@@ -50,7 +42,7 @@ void Fuerza:: ingresar_datos() {
     // Set the attributes with the validated user input
     this->repeticiones=repeticiones;
     this->series=series;
-    this->peso=peso;
+    this->pesa=peso;
     this->frecuencia=frecuencia;
 
 }
@@ -62,8 +54,17 @@ void Fuerza::hallar_CQ_FC() {}
  */
 void Fuerza::mostrar_informacion() {
     cout << "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de "
-         << peso << " Kg " << frecuencia << "mente" << endl;
+         << pesa << " Kg " << frecuencia << "mente" << endl;
     cout <<"Calorias quemadas : "<<CQE<<endl;
+
+}
+
+void Fuerza::exportacion_informacion() {
+
+    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    archivo<< "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de " << pesa << " Kg " << frecuencia << "mente" << endl;
+    archivo<<"Calorias quemadas : "<<CQE<<endl;
+    archivo.close();
 
 }
 
