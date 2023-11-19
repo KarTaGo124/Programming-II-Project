@@ -22,7 +22,6 @@ private:
     vector<Ejercicio*> ejercicios;
     vector<double> historial_de_IMCS;
     vector<double> historial_calorias_quemadas;
-    friend class Ejercicio;
 public:
     // constructores
     Usuario();

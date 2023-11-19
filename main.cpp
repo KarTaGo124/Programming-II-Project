@@ -158,10 +158,9 @@ int main() {
                 break;
             case 7:
                 cout << "Saliendo del programa." << endl;
+                // liberamos memoria
+                delete baseDeDatos;
                 break;
-
-            default:
-                cout << "Opción no válida. Inténtelo de nuevo." << endl;
         }
     } while (opcion1 != 7);
 

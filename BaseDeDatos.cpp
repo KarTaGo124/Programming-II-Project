@@ -162,6 +162,7 @@ BaseDeDatos::~BaseDeDatos() {
     {
         delete i;
     }
+    cout << "Base de datos destruida" << endl;
 
 }
 

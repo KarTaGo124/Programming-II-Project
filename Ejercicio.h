@@ -24,7 +24,7 @@ public:
      * Virtual destructor for the Ejercicio class.
      * Provides a base class type to allow proper destruction of derived class objects.
      */
-    virtual ~Ejercicio() { cout << "Ejercicio destroyed" << endl; }
+    virtual ~Ejercicio() { cout << "Ejercicio destruido" << endl; }
 
     // Pure virtual methods
     /**

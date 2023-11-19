@@ -27,7 +27,11 @@ Usuario::Usuario(string nombre, string apellido, string genero,int edad, float p
     this->FCM = 220 - edad;
 }
 
-Usuario::~Usuario() {cout<<"Usuario destruido"<<endl;}
+Usuario::~Usuario() {
+    cout<<"Usuario destruido"<<endl;
+    for (auto i: ejercicios)
+        delete i;
+}
 
 
 void Usuario::agregar_ejercicio(Ejercicio* ejercicio) {
