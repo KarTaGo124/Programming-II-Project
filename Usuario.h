@@ -1,5 +1,5 @@
 //
-// Created by Guillermo Galvez on 15/11/2023.
+// Implemented by Hans Ibarra
 //
 
 #ifndef PROYECTO_USUARIO_H
@@ -7,6 +7,16 @@
 
 #include "Ejercicio.h"
 
+/**
+ * @file Usuario.h
+ * Declaration of the Usuario class.
+ * Created by Guillermo Galvez on 15/11/2023.
+ */
+
+
+/**
+ * The Usuario class represents a user with attributes such as name, gender, weight, and exercise history.
+ */
 class Usuario {
 private:
     string nombre;
@@ -42,30 +52,63 @@ public:
     Usuario(string nombre, string apellido, string genero, float peso, float peso_objetivo,
             float altura, string dni, float masa_muscular, float grasa_coporal);
 
-    // destructores
+    // Destructor
+    /**
+     * Destructor for the Usuario class.
+     * Displays a message when an instance of the Usuario class is destroyed.
+     */
     ~Usuario();
 
-    //metodos
+    // Methods
+
+    /**
+     * Validates user input for Usuario attributes.
+     * Ensures that the entered data is valid and not already present in the database.
+     * @param usuarios A vector containing pointers to existing Usuario objects.
+     */
     void validar_usuario(vector<Usuario*> &usuarios);
 
+    /**
+     * Adds an exercise to the user's exercise list.
+     * @param ejercicio A pointer to the Ejercicio object to be added.
+     */
     void agregar_ejercicio(Ejercicio* ejercicio);
 
+    /**
+     * Calculates the Body Mass Index (BMI) of the user.
+     * @return The calculated BMI value.
+     */
     float calcular_IMC();
 
+    /**
+     * Calculates the average heart rate during exercises.
+     * @return The average heart rate.
+     */
     float frecuencia_cardiaca_prom();
 
+    /**
+     * Generates an individual report for the user, displaying information about each exercise.
+     */
     void reporte_individual();
 
-    // getters
 
+    /**
+     * Getter function for the DNI attribute.
+     * @return A constant reference to the DNI attribute.
+     */
     string const& getDNI() const;
 
+    /**
+     * Getter function for the nombre attribute.
+     * @return A constant reference to the nombre attribute.
+     */
     const string &getNombre() const;
 
+    /**
+     * Getter function for the apellido attribute.
+     * @return A constant reference to the apellido attribute.
+     */
     const string &getApellido() const;
-
-
-
 };
 
 

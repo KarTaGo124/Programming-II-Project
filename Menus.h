@@ -1,9 +1,18 @@
 #ifndef PROYECTO_MENUS_H
 #define PROYECTO_MENUS_H
 
-#endif //PROYECTO_MENUS_H
+/**
+ * @file Menus.h
+ * Header file for defining menus and related functions in the project.
+ */
+
 #include "Librerias.h"
-int menuPrincipal(){
+
+/**
+ * Displays the main menu and prompts the user to choose an option.
+ * @return The chosen option.
+ */
+int menuPrincipal() {
     int option;
     do {
         cout << "\t MENU PRINCIPAL" << endl
@@ -19,7 +28,12 @@ int menuPrincipal(){
     return option;
 }
 
-int menuUsuarios(const vector<Usuario*> &usuarios){
+/**
+ * Displays a menu listing available users and prompts the user to choose one.
+ * @param usuarios A vector containing pointers to Usuario objects.
+ * @return The index of the selected user.
+ */
+int menuUsuarios(const vector<Usuario*> &usuarios) {
     int option;
     cout << "\t MENU USUARIOS" << endl;
     for (int i = 0; i < usuarios.size(); i++){
@@ -31,7 +45,11 @@ int menuUsuarios(const vector<Usuario*> &usuarios){
     return option;
 }
 
-int menuEjercicios(){
+/**
+ * Displays a menu for selecting exercise types and prompts the user to choose one.
+ * @return The chosen option.
+ */
+int menuEjercicios() {
     int option;
     do {
         cout << "\t MENU EJERCICIOS" << endl
@@ -43,7 +61,12 @@ int menuEjercicios(){
     } while (option < 1 || option > 4);
     return option;
 }
-int menuCardio(){
+
+/**
+ * Displays a menu for selecting cardio exercises and prompts the user to choose one.
+ * @return The chosen option.
+ */
+int menuCardio() {
     int option;
     do {
         cout << "\t MENU CARDIO" << endl
@@ -56,7 +79,12 @@ int menuCardio(){
     } while (option < 1 || option > 5);
     return option;
 }
-int menuFuerza(){
+
+/**
+ * Displays a menu for selecting strength exercises and prompts the user to choose one.
+ * @return The chosen option.
+ */
+int menuFuerza() {
     int option;
     do {
         cout << "\t MENU FUERZA" << endl
@@ -70,7 +98,12 @@ int menuFuerza(){
     } while (option < 1 || option > 6);
     return option;
 }
-int menuFlexibilidad(){
+
+/**
+ * Displays a menu for selecting flexibility exercises and prompts the user to choose one.
+ * @return The chosen option.
+ */
+int menuFlexibilidad() {
     int option;
     do {
         cout << "\t MENU FLEXIBILIDAD" << endl

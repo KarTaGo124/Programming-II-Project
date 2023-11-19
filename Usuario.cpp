@@ -1,24 +1,43 @@
-//
-// Created by Guillermo Galvez on 15/11/2023.
-//
+/**
+ * @file Usuario.cpp
+ * Implementation of the Usuario class.
+ * Documented by Hans Camilo
+ */
 
 #include "Usuario.h"
 
-Usuario:: Usuario(){}
-
-Usuario:: Usuario(string n,string g,string a,string dni,float al,float masa_cular,float grasa_cular, float p, float p_o){
-
-    this->nombre=n;
-    this->genero=g;
-    this->peso=p;
-    this->peso_objetivo=p_o;
-    this->apellido=a;
-    this ->altura=al;
-    this ->masa_muscular=masa_cular;
-    this ->grasa_coporal=grasa_cular;
-    this ->DNI=dni;
-
-
+/**
+ * Default constructor for the Usuario class.
+ * Example:
+ * @code
+ * Usuario user; // Creates a default Usuario object.
+ * @endcode
+ */
+Usuario:: Usuario() {}
+/**
+ * Parameterized constructor for the Usuario class.
+ * Initializes the Usuario object with provided attributes.
+ * @param nombre          The name of the user.
+ * @param apellido        The last name of the user.
+ * @param genero          The gender of the user (either "Masculino" or "Femenino").
+ * @param peso            The weight of the user.
+ * @param peso_objetivo   The weight goal of the user.
+ * @param altura          The height of the user.
+ * @param dni             The DNI (Documento Nacional de Identidad) of the user.
+ * @param masa_muscular   The muscular mass of the user.
+ * @param grasa_coporal   The body fat percentage of the user.
+ */
+Usuario::Usuario(string nombre, string apellido, string genero, float peso, float peso_objetivo,
+                 float altura, string dni, float masa_muscular, float grasa_coporal) {
+    this->nombre = nombre;
+    this->apellido = apellido;
+    this->genero = genero;
+    this->peso = peso;
+    this->peso_objetivo = peso_objetivo;
+    this ->altura = altura;
+    this ->masa_muscular = masa_muscular;
+    this ->grasa_coporal = grasa_coporal;
+    this ->DNI = dni;
 }
 
 /**
@@ -84,6 +103,7 @@ void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
         }
 
         bool dniExistente = false;
+
         for (const auto &i : usuarios) {
             if (i->getDNI() == DNI) {
                 dniExistente = true;
@@ -95,7 +115,6 @@ void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
             cout << "Error: El DNI ya existe en la base de datos." << endl;
             continue;
         }
-
         break;
 
     } while (true);
@@ -117,19 +136,54 @@ void Usuario::agregar_ejercicio(Ejercicio* ejercicio) {
     ejercicios.push_back(ejercicio);
 }
 
-float Usuario:: calcular_IMC(){
-    return peso/(pow(altura,2));
+/**
+ * Calculates the Body Mass Index (BMI) of the user.
+ * @return The calculated BMI value.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * float bmi = user.calcular_IMC(); // Calculates and returns the BMI.
+ * @endcode
+ */
+float Usuario::calcular_IMC() {
+    return peso / (pow(altura,2));
 }
 
-float Usuario:: frecuencia_cardiaca_prom(){
-    float promedio=0;
-    for (int i = 0; i < ejercicios.size() ;++i) {
-            promedio+=ejercicios[i]->getFCE();
+/**
+ * Calculates the average heart rate during exercises.
+ * @return The average heart rate.
+ *
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * auto* exercise1 = new Cardio("Correr", 30, 150);
+ * auto* exercise2 = new Cardio("Nadar", 45, 130);
+ * user.agregar_ejercicio(exercise1);
+ * user.agregar_ejercicio(exercise2);
+ * float avgHeartRate = user.frecuencia_cardiaca_prom(); // Calculates and returns the average heart rate.
+ * @endcode
+ */
+float Usuario::frecuencia_cardiaca_prom() {
+    float promedio = 0;
+    for (int i = 0; i < ejercicios.size(); i++) {
+        promedio += ejercicios[i]->getFCE();
     }
-    return promedio=promedio/ejercicios.size();
+    return promedio = promedio / ejercicios.size();
 
 }
 
+/**
+ * Generates an individual report for the user, displaying information about each exercise.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * auto* exercise1 = new Cardio("Correr", 30, 150);
+ * auto* exercise2 = new Cardio("Nadar", 45, 130);
+ * user.agregar_ejercicio(exercise1);
+ * user.agregar_ejercicio(exercise2);
+ * user.reporte_individual(); // Displays a report of each exercise for the user.
+ * @endcode
+ */
 void Usuario::reporte_individual() {
     cout << "----------------------------------------" << endl << "Reporte Individiual de " <<
     nombre << " " << apellido << endl;
@@ -138,13 +192,42 @@ void Usuario::reporte_individual() {
     }
 }
 
+/**
+ * Getter function for the DNI attribute.
+ * @return A constant reference to the DNI attribute.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * string dni = user.getDNI(); // Retrieves and returns the DNI.
+ * @endcode
+ */
 string const& Usuario::getDNI() const {
     return DNI;
 }
+
+/**
+ * Getter function for the nombre attribute.
+ * @return A constant reference to the nombre attribute.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * string name = user.getNombre(); // Retrieves and returns the name.
+ * @endcode
+ */
 const string &Usuario::getNombre() const {
     return nombre;
 }
 
+
+/**
+ * Getter function for the apellido attribute.
+ * @return A constant reference to the apellido attribute.
+ * Example:
+ * @code
+ * Usuario user("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
+ * string lastName = user.getApellido(); // Retrieves and returns the last name.
+ * @endcode
+ */
 const string &Usuario::getApellido() const {
     return apellido;
 }
