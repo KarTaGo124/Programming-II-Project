@@ -13,10 +13,11 @@
  */
 class Ejercicio {
 protected:
-    string nombre;       ///< The name of the exercise type.
-    int FCE;             ///< Frecuencia Cardiaca por Ejercicio (Cardiac Frequency per Exercise).
-    int CQE;             ///< Calorias Quemadas por Ejercicio (Calories Burned per Exercise).
-    string frecuencia;   ///< The frequency at which the exercise is performed (daily, weekly, etc.).
+    string nombre; // nombre del tipo de ejercicio
+    float FCE; // frecuencia cardiaca por ejercicio
+    float CQE; // calorias quemadas por ejercicio
+    string frecuencia; // frecuencia en la que realizamos el ejercicio (cada dia, semana, etc)
+    vector<int> frecueciasCardiacas;
 
 public:
     // Destructor
@@ -42,11 +43,17 @@ public:
      */
     virtual void mostrar_informacion() = 0;
 
+    virtual void exportacion_informacion() = 0;
+
     /**
      * Getter method to retrieve the FCE (Frecuencia Cardiaca por Ejercicio).
      * @return The FCE value.
      */
-    int getFCE() { return FCE; }
+
+
+    float getFCE() { return FCE; }
+
+    float getCQE()  { return CQE; }
 };
 
 #endif //PROYECTO_EJERCICIO_H

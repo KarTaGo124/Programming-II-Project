@@ -1,5 +1,4 @@
 //
-// Implemented by Hans Ibarra
 //
 
 #ifndef PROYECTO_USUARIO_H
@@ -10,7 +9,6 @@
 /**
  * @file Usuario.h
  * Declaration of the Usuario class.
- * Created by Guillermo Galvez on 15/11/2023.
  */
 
 
@@ -65,13 +63,6 @@ public:
     // Methods
 
     /**
-     * Validates user input for Usuario attributes.
-     * Ensures that the entered data is valid and not already present in the database.
-     * @param usuarios A vector containing pointers to existing Usuario objects.
-     */
-    void validar_usuario(vector<Usuario*> &usuarios);
-
-    /**
      * Adds an exercise to the user's exercise list.
      * @param ejercicio A pointer to the Ejercicio object to be added.
      */
@@ -94,6 +85,11 @@ public:
      */
     void reporte_individual();
 
+    void reporte_individual_exportacion();
+
+    void peso_ideal();
+
+    void calorias_quemadas_rango(float c, int n);
 
     /**
      * Getter function for the DNI attribute.

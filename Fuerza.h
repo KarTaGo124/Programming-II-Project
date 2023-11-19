@@ -31,19 +31,7 @@ public:
      */
     Fuerza();
 
-    // Destructor
-    /**
-     * Virtual destructor for the Fuerza class.
-     * Provides a base class type to allow proper destruction of derived class objects.
-     */
-    virtual ~Fuerza();
-
-    // Overridden methods
-    /**
-     * Calculates and sets the Calorias Quemadas (CQ) and Frecuencia Cardiaca (FC) for the strength exercise.
-     * Overrides the corresponding method in the base class (Ejercicio).
-     */
-    void hallar_CQ_FC() override;
+    Fuerza(string nombre);
 
     /**
      * Takes user input to set the attributes of the Fuerza object.
@@ -51,11 +39,16 @@ public:
      */
     void ingresar_datos() override;
 
+    void exportacion_informacion() override;
+
+    void hallar_CQ_FC() override;
+
     /**
-     * Displays information about the Fuerza exercise.
-     * Overrides the corresponding method in the base class (Ejercicio).
+     * Virtual destructor for the Fuerza class.
+     * Provides a base class type to allow proper destruction of derived class objects.
      */
-    void mostrar_informacion() override;
+    virtual ~Fuerza();
+
 };
 
 #endif //PROYECTO_FUERZA_H

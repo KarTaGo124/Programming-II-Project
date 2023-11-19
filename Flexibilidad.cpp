@@ -4,7 +4,7 @@
 #include "Flexibilidad.h"
 Flexibilidad:: Flexibilidad(){}
 
-Flexibilidad::  Flexibilidad(string nombre){
+Flexibilidad::Flexibilidad(string nombre){
     this->nombre = nombre;
 }
 
@@ -35,8 +35,17 @@ void Flexibilidad::ingresar_datos() {
 }
 
 void Flexibilidad::mostrar_informacion() {
+
     cout << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     cout <<"Calorias quemadas : "<<CQE<<endl;
+
+}
+
+void Flexibilidad::exportacion_informacion() {
+    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    archivo << nombre << " durante " << duracion << " con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
+    archivo <<"Calorias quemadas : "<<CQE<<endl;
+    archivo.close();
 
 }
 void Flexibilidad::hallar_CQ_FC() {

@@ -118,6 +118,12 @@ build CMakeFiles/borrador.dir/Borrador/main.cpp.obj: CXX_COMPILER__borrador_unsc
   OBJECT_DIR = CMakeFiles\borrador.dir
   OBJECT_FILE_DIR = CMakeFiles\borrador.dir\Borrador
 
+build CMakeFiles/borrador.dir/Borrador/CMET.cpp.obj: CXX_COMPILER__borrador_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Borrador/CMET.cpp || cmake_object_order_depends_target_borrador
+  DEP_FILE = CMakeFiles\borrador.dir\Borrador\CMET.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\borrador.dir
+  OBJECT_FILE_DIR = CMakeFiles\borrador.dir\Borrador
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target borrador
@@ -126,7 +132,7 @@ build CMakeFiles/borrador.dir/Borrador/main.cpp.obj: CXX_COMPILER__borrador_unsc
 #############################################
 # Link the executable borrador.exe
 
-build borrador.exe: CXX_EXECUTABLE_LINKER__borrador_Debug CMakeFiles/borrador.dir/Borrador/main.cpp.obj
+build borrador.exe: CXX_EXECUTABLE_LINKER__borrador_Debug CMakeFiles/borrador.dir/Borrador/main.cpp.obj CMakeFiles/borrador.dir/Borrador/CMET.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\borrador.dir

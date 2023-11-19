@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Flexibilidad.h"
 #include "Fuerza.h"
 #include "Cardio.h"
@@ -8,19 +6,14 @@
 
 // falta implementar las graficas(nose)
 // la calculadora de calorias(esto no se) y frecuencia cardiaca(podria ser un rand)
-// falta agregar la parte de calculos realizados al reporte individual
-// idea para mostrar el progreso en el reporte individual:
-// podriamos preguntar al usuario cuantas semanas han pasado desde que esta haciendo ejercicio y generar las graficas a partir de ello
-// como minimo 1 mes es decir 4 semanas ya que podemos argumentar que en menos de 1 mes no se generan resultados
+
 // implementar un mensaje que avise cuando llegas al peso objetivo
-// implementar consejos dependiendo del tipo de dieta que quieres hacer (subir o bajar peso)
-// se le recomienda agregar al menos uno de flexibilidad para complementar la rutina
 
 int main() {
     srand(time(nullptr));
     auto* baseDeDatos = new BaseDeDatos();  // Crear una instancia de la base de datos
 
-    int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7;
+    int opcion1, opcion2, opcion3, opcion4, opcion5, opcion6, opcion7, numero_semanas;
 
     do {
         opcion1 = menuPrincipal();
@@ -31,6 +24,9 @@ int main() {
             case 2:
                 opcion2 = menuUsuarios(baseDeDatos->getUsuarios());
                 do{
+                    do {
+                        cout << "Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
+                    } while (numero_semanas < 4);
                     opcion3 = menuEjercicios();
                     switch (opcion3) {
                         case 1:
@@ -55,9 +51,12 @@ int main() {
                                         aux_cardio->ingresar_datos();
                                         break;
                                 }
+                                aux_cardio->hallar_CQ_FC();
                                 if (opcion4!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_cardio);
+                                cout << "-----CONSEJO : ";
                                 Consejos_Generales();
+                                cout << endl << "------";
                             } while (opcion4!= 5);
                             break;
                         case 2:
@@ -86,9 +85,12 @@ int main() {
                                         aux_fuerza->ingresar_datos();
                                         break;
                                 }
+                                aux_fuerza->hallar_CQ_FC();
                                 if (opcion5!=6)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_fuerza);
+                                cout << "-----CONSEJO : ";
                                 Consejos_Generales();
+                                cout << endl << "------";
                             } while(opcion5!=6);
                             break;
                         case 3:
@@ -113,12 +115,21 @@ int main() {
                                         aux_flexibilidad->ingresar_datos();
                                         break;
                                 }
+                                aux_flexibilidad->hallar_CQ_FC();
                                 if (opcion6!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_flexibilidad);
+                                cout << "-----CONSEJO : ";
                                 Consejos_Generales();
+                                cout << endl << "------";
                             } while(opcion6!=5);
                             break;
                     }
+                    float calorias_semanales = 0;
+                    for (auto i : baseDeDatos->getUsuarios()[opcion2-1]->getEjercicios()) {
+                        calorias_semanales += i->getCQE();
+                    }
+                    baseDeDatos->getUsuarios()[opcion2-1]->getHistorialCaloriasQuemadas().push_back(calorias_semanales);
+                    baseDeDatos->getUsuarios()[opcion2-1]->calorias_quemadas_rango(calorias_semanales,numero_semanas);
                 } while (opcion3!=4);
                 break;
             case 3:
@@ -131,6 +142,7 @@ int main() {
                 baseDeDatos->reporte_general();
                 break;
             case 6:
+                cout << "Reporte general exportado" << endl;
                 baseDeDatos->exportarReportes();
                 break;
             case 7:
@@ -141,7 +153,6 @@ int main() {
                 cout << "Opción no válida. Inténtelo de nuevo." << endl;
         }
     } while (opcion1 != 7);
-
 
 
     return 0;

@@ -4,14 +4,8 @@
  * Default constructor for the Fuerza class.
  */
 Fuerza::Fuerza() {}
-
-/**
- * Parameterized constructor for the Fuerza class.
- * Initializes the Fuerza object with the given name.
- * @param nombre The name of the strength exercise.
- */
-Fuerza:: Fuerza(string nombre){
-    this->nombre = nombre;
+Fuerza::Fuerza(string nombre) {
+    this -> nombre = nombre;
 }
 
 /**
@@ -61,6 +55,7 @@ void Fuerza:: ingresar_datos() {
 
 }
 
+void Fuerza::hallar_CQ_FC() {}
 /**
  * Displays information about the Fuerza exercise.
  * Outputs the number of repetitions, series, weight, and exercise frequency.

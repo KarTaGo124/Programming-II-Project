@@ -39,10 +39,17 @@ void Cardio::mostrar_informacion() {
     cout << nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
     cout <<"Calorias quemadas : "<<CQE<<endl;
 }
+
+void Cardio::exportacion_informacion() {
+    ofstream archivo("C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\ProyectoProgra2Laboratorio\\ReporteGeneral.txt",ios::app);
+    archivo<< nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
+    archivo<<"Calorias quemadas : "<<CQE<<endl;
+    archivo.close();
+}
 void Cardio::hallar_CQ_FC() {
     if (nombre == "Correr") {
         CQE = 0;
-        FCE = 0;
+        FCE = rand();
     }
     else if (nombre == "Ciclismo"){
         CQE = 0;

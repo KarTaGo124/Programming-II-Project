@@ -4,7 +4,6 @@
 #include "BaseDeDatos.h"
 
 #include "Librerias.h"
-
 BaseDeDatos:: BaseDeDatos(){}
 
 void BaseDeDatos::agregar_usuario() {
@@ -141,7 +140,11 @@ void BaseDeDatos::reporte_general() {
         i->reporte_individual();
     }
 }
-void BaseDeDatos::  exportarReportes(){}
+void BaseDeDatos::  exportarReportes(){
+    for(auto i: usuarios){
+        i->reporte_individual_exportacion();
+    }
+}
 
 bool BaseDeDatos::existeUsuarioConDNI(const string& dni) {
     for (const auto &i : usuarios) {

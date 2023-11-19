@@ -1,7 +1,6 @@
 /**
  * @file Usuario.cpp
  * Implementation of the Usuario class.
- * Documented by Hans Camilo
  */
 
 #include "Usuario.h"
@@ -33,11 +32,13 @@ Usuario::Usuario(string nombre, string apellido, string genero, float peso, floa
     this->apellido = apellido;
     this->genero = genero;
     this->peso = peso;
+    this->peso_inicial = peso;
     this->peso_objetivo = peso_objetivo;
-    this ->altura = altura;
-    this ->masa_muscular = masa_muscular;
-    this ->grasa_coporal = grasa_coporal;
-    this ->DNI = dni;
+    this->altura = altura;
+    this->masa_muscular = masa_muscular;
+    this->grasa_coporal = grasa_coporal;
+    this->DNI = dni;
+
 }
 
 /**
@@ -46,82 +47,6 @@ Usuario::Usuario(string nombre, string apellido, string genero, float peso, floa
  */
 Usuario::~Usuario() {cout<<"Usuario destruido"<<endl;}
 
-
-/**
- * Validates user input for Usuario attributes.
- * Ensures that the entered data is valid and not already present in the database.
- * @param usuarios A vector containing pointers to existing Usuario objects.
- * @pre The 'usuarios' vector should not be empty, and each Usuario object in it must have a valid DNI.
- * @post The Usuario object is validated, and its attributes are set according to user input.
- *
- * Example:
- * @code
- * vector<Usuario*> usuarios;
- * Usuario* user1 = new Usuario("John", "Doe", "Masculino", 70, 75, 175, "12345678", 20, 15);
- * usuarios.push_back(user1);
- *
- * Usuario* newUser = new Usuario();
- * newUser->validar_usuario(usuarios);
- * // The method will prompt the user to input data, and if valid, newUser will be added to the 'usuarios' vector.
- * @endcode
- */
-void Usuario::validar_usuario(vector<Usuario*> &usuarios) {
-    do {
-        cout << "Ingrese el nombre: ";
-        cin >> nombre;
-
-        cout << "Ingrese el género (Masculino/Femenino): ";
-        cin >> genero;
-
-        cout << "Ingrese el peso: ";
-        cin >> peso;
-
-        cout << "Ingrese el peso objetivo: ";
-        cin >> peso_objetivo;
-
-        cout << "Ingrese el DNI (8 dígitos): ";
-        cin >> DNI;
-
-        if (nombre.length() == 0) {
-            cout << "Error: El nombre no puede estar vacio." << endl;
-            continue;
-        }
-
-        if (genero != "Masculino" && genero != "Femenino") {
-            cout << "Error: El genero debe ser 'Masculino' o 'Femenino'." << endl;
-            continue;
-        }
-
-        if (peso <= 0 || peso_objetivo <= 0) {
-            cout << "Error: El peso y el peso objetivo deben ser valores positivos." << endl;
-            continue;
-        }
-
-        if (DNI.length() != 8) {
-            cout << "Error: El DNI debe tener exactamente 8 numeros." << endl;
-            continue;
-        }
-
-        bool dniExistente = false;
-
-        for (const auto &i : usuarios) {
-            if (i->getDNI() == DNI) {
-                dniExistente = true;
-                break;
-            }
-        }
-
-        if (dniExistente) {
-            cout << "Error: El DNI ya existe en la base de datos." << endl;
-            continue;
-        }
-        break;
-
-    } while (true);
-
-    cout << "Usuario validado correctamente." << endl;
-
-}
 
 /**
  * Adds an exercise to the user's exercise list.
