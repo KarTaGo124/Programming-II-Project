@@ -23,10 +23,10 @@ int main() {
                 break;
             case 2:
                 opcion2 = menuUsuarios(baseDeDatos->getUsuarios());
+                do {
+                    cout << "Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
+                } while (numero_semanas < 4);
                 do{
-                    do {
-                        cout << "Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
-                    } while (numero_semanas < 4);
                     opcion3 = menuEjercicios();
                     switch (opcion3) {
                         case 1:
@@ -56,7 +56,7 @@ int main() {
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_cardio);
                                 cout << "-----CONSEJO : ";
                                 Consejos_Generales();
-                                cout << endl << "------";
+                                cout << "------" << endl;
                             } while (opcion4!= 5);
                             break;
                         case 2:
@@ -90,7 +90,7 @@ int main() {
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_fuerza);
                                 cout << "-----CONSEJO : ";
                                 Consejos_Generales();
-                                cout << endl << "------";
+                                cout << "------" << endl;
                             } while(opcion5!=6);
                             break;
                         case 3:
@@ -120,7 +120,7 @@ int main() {
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_flexibilidad);
                                 cout << "-----CONSEJO : ";
                                 Consejos_Generales();
-                                cout << endl << "------";
+                                cout << "------" << endl;
                             } while(opcion6!=5);
                             break;
                     }
@@ -133,6 +133,7 @@ int main() {
                 } while (opcion3!=4);
                 break;
             case 3:
+                system("python Graficas.py");
                 break;
             case 4:
                 opcion7 = menuUsuarios(baseDeDatos->getUsuarios());

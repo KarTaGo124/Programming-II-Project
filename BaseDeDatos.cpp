@@ -84,7 +84,7 @@ void BaseDeDatos::agregar_usuario() {
         if (peso < 0 || peso > 200) {
             cout << "El peso no puede ser negativo. Inténtelo de nuevo." << endl;
         }
-    } while (peso < 0 || peso > 200);
+    } while (peso < 30 || peso > 200);
 
     cout << "¡Peso válido ingresado correctamente!" << endl;
 
@@ -94,7 +94,7 @@ void BaseDeDatos::agregar_usuario() {
         if (peso_objetivo < 0 || peso_objetivo > 200) {
             cout << "El peso objetivo no puede ser negativo. Inténtelo de nuevo." << endl;
         }
-    } while (peso_objetivo < 0 || peso_objetivo > 200);
+    } while (peso_objetivo < 30 || peso_objetivo > 200);
 
     cout << "¡Peso objetivo válido ingresado correctamente!" << endl;
 
