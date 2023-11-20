@@ -28,9 +28,7 @@ Usuario::Usuario(string nombre, string apellido, string genero,int edad, float p
 }
 
 Usuario::~Usuario() {
-    cout<<"Usuario destruido"<<endl;
-    for (auto i: ejercicios)
-        delete i;
+    cout<<"Usuario destruido"<<endl; for (auto i: ejercicios) delete i;
 }
 
 
@@ -44,9 +42,7 @@ float Usuario::calcular_IMC() {
 
 float Usuario::frecuencia_cardiaca_prom() {
     float promedio = 0;
-    for (int i = 0; i < ejercicios.size(); i++) {
-        promedio += ejercicios[i]->getFCE();
-    }
+    for (int i = 0; i < ejercicios.size(); i++) {promedio += ejercicios[i]->getFCE();}
     promedio = promedio / ejercicios.size();
     return promedio;
 }

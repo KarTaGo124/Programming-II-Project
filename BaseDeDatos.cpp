@@ -136,9 +136,7 @@ void BaseDeDatos::agregar_usuario() {
 }
 
 void BaseDeDatos::reporte_general() {
-    for(auto i: usuarios){
-        i->reporte_individual();
-    }
+    for(auto i: usuarios){i->reporte_individual();}
 }
 void BaseDeDatos::  exportarReportes(){
     ofstream archivo("../ReporteGeneral.txt",ios::out);
@@ -158,12 +156,7 @@ bool BaseDeDatos::existeUsuarioConDNI(const string& dni) {
 }
 
 BaseDeDatos::~BaseDeDatos() {
-    for (auto i: usuarios)
-    {
-        delete i;
-    }
-    cout << "Base de datos destruida" << endl;
-
+    for (auto i: usuarios) delete i; cout << "Base de datos destruida" << endl;
 }
 
 vector<Usuario *> &BaseDeDatos::getUsuarios() {

@@ -51,7 +51,7 @@ int main() {
                                         aux_cardio->ingresar_datos();
                                         break;
                                 }
-                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/3.0); // si hace ejercicios de fuerza aumenta poco su masa muscular
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%numero_semanas+1)/3.5); // si hace ejercicios de fuerza aumenta poco su masa muscular
                                 aux_cardio->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion4!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_cardio);
@@ -86,7 +86,7 @@ int main() {
                                         aux_fuerza->ingresar_datos();
                                         break;
                                 }
-                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/2.0); // si hace ejercicios de fuerza aumenta su masa muscular
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%numero_semanas+1)/2.0); // si hace ejercicios de fuerza aumenta su masa muscular
                                 aux_fuerza->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion5!=6)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_fuerza);
@@ -117,7 +117,7 @@ int main() {
                                         aux_flexibilidad->ingresar_datos();
                                         break;
                                 }
-                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/4.0); // si hace ejercicios de fuerza aumenta muy poco su masa muscular
+                                baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%numero_semanas+1)/5.0); // si hace ejercicios de fuerza aumenta muy poco su masa muscular
                                 aux_flexibilidad->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion6!=5)
                                     baseDeDatos->getUsuarios()[opcion2-1]->agregar_ejercicio(aux_flexibilidad);
