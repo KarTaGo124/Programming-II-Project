@@ -53,7 +53,7 @@ void Usuario::reporte_individual() {
     for (auto i: ejercicios){
         i->mostrar_informacion();
     }
-    cout << "IMC inicial: " << peso*pow(altura/100,2) << endl;
+    cout << "IMC inicial: " << peso_inicial/pow(altura/100,2) << endl;
     for (int i = 0; i < historial_de_IMCS.size(); i++){
         cout <<"Indice de masa corporal " << i+1 << + ": " << historial_de_IMCS[i] <<endl;
     }
@@ -67,7 +67,7 @@ void Usuario::reporte_individual_exportacion() {
     for (auto i: ejercicios){
         i->exportacion_informacion();
     }
-    archivo << "IMC inicial: " << peso*pow(altura/100,2) << endl;
+    archivo << "IMC inicial: " << peso_inicial/pow(altura/100,2) << endl;
     for (int i = 0; i < historial_de_IMCS.size(); i++){
         archivo<<"Indice de masa corporal " << i+1 << + ": " << historial_de_IMCS[i] <<endl;
     }
@@ -97,7 +97,8 @@ void Usuario::meta_peso() {
 
 }
 void Usuario::meta_masa_muscular(){
-    cout << "-----Restante para llegar a la masa muscular objetivo " << abs(masa_muscular - masa_muscular_objetivo) << "-----" << endl;
+    if (masa_muscular <= masa_muscular_objetivo)
+        cout << "-----Restante para llegar a la masa muscular objetivo " << abs(masa_muscular - masa_muscular_objetivo) << "-----" << endl;
     if (masa_muscular_objetivo <= masa_muscular) {
         cout << "-------Has alcanzado o superado tu masa muscular objetivo, Felicitaciones.--------" << endl;
     }
@@ -111,11 +112,10 @@ void Usuario::calorias_quemadas_rango(double c, int n) {
     }
 }
 
-void Usuario::actulizaciones_imcs() {
+void Usuario::actulizaciones_imcs(int n) {
     double imc;
-    historial_de_IMCS.clear();
-    for (int i = 0; i < historial_calorias_quemadas.size(); i++) {
-        peso -= historial_calorias_quemadas[i] / 15000.0;
+    for (int i = n; i > 0 ; i--) {
+        peso -= historial_calorias_quemadas[historial_calorias_quemadas.size()-n] / 15000.0;
         imc = peso/pow(altura/100.0,2);
         historial_de_IMCS.push_back(imc);
     }

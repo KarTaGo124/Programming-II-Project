@@ -37,7 +37,7 @@ public:
     void meta_peso();
     void meta_masa_muscular();
     void calorias_quemadas_rango(double c, int n);
-    void actulizaciones_imcs();
+    void actulizaciones_imcs(int n);
     string to_string_historial_calorias();
     string to_string_historial_imcs();
     // getters

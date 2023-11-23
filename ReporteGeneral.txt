@@ -1,18 +1,32 @@
 ----------------------------------------
-Reporte Individual de Caros Quispe
-Correr durante 40 minutos a 16 km/h diariamente
-Calorias quemadas : 27290.7
-Nadar durante 30 minutos a 8 km/h interdiariamente
-Calorias quemadas : 12792.5
-Nadar durante 30 minutos a 8 km/h semanalmente
-Calorias quemadas : 3655
-Realiza 10 repeticiones de Press Banca en 4 series con un peso de 10 Kg interdiariamente
-Calorias quemadas : -23026.5
-Realiza 40 repeticiones de Flexiones en 5 series con un peso de 50 Kg diariamente
-Calorias quemadas : -4.0936e+06
-IMC inicial: 3274.63
-Indice de masa corporal 1: 123.365
-Indice de masa corporal 2: 222.017
-Indice de masa corporal 3: 306.575
-Indice de masa corporal 4: 392.073
-Frecuencia cardiaca promedio: 124.028
+Reporte Individual de Guillermo Galvez
+Estiramientos durante 10 minutos con una dificultad media diariamente
+Calorias quemadas : 64.365
+Realiza 8 repeticiones de Flexiones en 3 series con un peso de 5 Kg semanalmente
+Calorias quemadas : -5884.8
+Realiza 5 repeticiones de Dominadas en 3 series con un peso de 4 Kg interdiariamente
+Calorias quemadas : -15286.7
+Correr durante 30 minutos a 4 km/h interdiariamente
+Calorias quemadas : 2145.5
+Realiza 10 repeticiones de Peso Muerto en 2 series con un peso de 3 Kg interdiariamente
+Calorias quemadas : -3540.08
+Nadar durante 20 minutos a 3 km/h diariamente
+Calorias quemadas : 5363.75
+Realiza 1 repeticiones de Sentadillas en 1 series con un peso de 10 Kg semanalmente
+Calorias quemadas : -551.7
+IMC inicial: 19.0311
+Indice de masa corporal 1: 19.4685
+Indice de masa corporal 2: 19.906
+Indice de masa corporal 3: 20.3434
+Indice de masa corporal 4: 20.7808
+Indice de masa corporal 5: 21.1761
+Indice de masa corporal 6: 21.5714
+Indice de masa corporal 7: 21.9668
+Indice de masa corporal 8: 22.3621
+Indice de masa corporal 9: 22.7575
+Indice de masa corporal 10: 23.1528
+Indice de masa corporal 11: 23.5609
+Indice de masa corporal 12: 23.9689
+Indice de masa corporal 13: 24.377
+Indice de masa corporal 14: 24.7851
+Frecuencia cardiaca promedio: 115.42

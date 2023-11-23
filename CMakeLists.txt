@@ -19,6 +19,4 @@ add_executable(PROYECTO main.cpp
         Librerias.h
         ReporteGeneral.txt
 )
-add_executable(borrador Borrador/main.cpp
-        Borrador/CMET.cpp
-        Borrador/CMET.h)
+

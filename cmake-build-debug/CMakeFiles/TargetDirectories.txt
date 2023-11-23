@@ -1,4 +1,3 @@
-C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/PROYECTO.dir
-C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/borrador.dir
-C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/SEGUNDO CICLO/Programming 2/LAB/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/PROYECTO.dir
+C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/SEGUNDO CICLO/Programming 2/LAB/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Guillermo Galvez/OneDrive - UNIVERSIDAD DE INGENIERIA Y TECNOLOGIA/Escritorio/SEGUNDO CICLO/Programming 2/LAB/ProyectoProgra2Laboratorio/cmake-build-debug/CMakeFiles/rebuild_cache.dir

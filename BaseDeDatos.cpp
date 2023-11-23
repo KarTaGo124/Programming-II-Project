@@ -128,7 +128,7 @@ void BaseDeDatos::agregar_usuario() {
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 
-    auto *axu=new Usuario(nombre,apellido,genero,edad,peso,peso_objetivo,altura,dni,masa_muscular*peso/100,masa_muscular_objetivo*peso/100);
+    auto *axu=new Usuario(nombre,apellido,genero,edad,peso,peso_objetivo,altura,dni,masa_muscular,masa_muscular_objetivo);
     usuarios.push_back(axu);
 
     cout << "¡El Usuario se ha registrado correctamente!" << endl;

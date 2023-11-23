@@ -40,7 +40,7 @@ void Cardio::ingresar_datos() {
 
 void Cardio::mostrar_informacion() {
     if (nombre != "Saltar Cuerda") {
-        cout << nombre << " durante " << duracion << " minutos a " << velocidad << " m/s " << frecuencia << "mente" << endl;
+        cout << nombre << " durante " << duracion << " minutos a " << velocidad << " km/h " << frecuencia << "mente" << endl;
         cout <<"Calorias quemadas : "<<CQE<<endl;
     }
     else {
