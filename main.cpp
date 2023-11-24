@@ -51,6 +51,7 @@ int main() {
                                         aux_cardio->ingresar_datos();
                                         break;
                                 }
+                                // FALTA ARREGLAR LA MASA MUSCULAR pero q flojera
                                 baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/4); // si hace ejercicios de fuerza aumenta poco su masa muscular
                                 aux_cardio->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion4!=5)
