@@ -49,41 +49,41 @@ cmake_ninja_workdir = C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/Proyec
 
 build cmake_object_order_depends_target_PROYECTO: phony || CMakeFiles/PROYECTO.dir
 
-build CMakeFiles/PROYECTO.dir/main.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/main.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\main.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/main.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/main.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src
 
-build CMakeFiles/PROYECTO.dir/Usuario.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Usuario.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\Usuario.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/user/Usuario.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/user/Usuario.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\user\Usuario.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src\user
 
-build CMakeFiles/PROYECTO.dir/Flexibilidad.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Flexibilidad.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\Flexibilidad.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/exercise/Flexibilidad.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/exercise/Flexibilidad.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\exercise\Flexibilidad.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src\exercise
 
-build CMakeFiles/PROYECTO.dir/Fuerza.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Fuerza.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\Fuerza.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/exercise/Fuerza.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/exercise/Fuerza.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\exercise\Fuerza.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src\exercise
 
-build CMakeFiles/PROYECTO.dir/Cardio.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Cardio.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\Cardio.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/exercise/Cardio.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/exercise/Cardio.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\exercise\Cardio.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src\exercise
 
-build CMakeFiles/PROYECTO.dir/BaseDeDatos.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/BaseDeDatos.cpp || cmake_object_order_depends_target_PROYECTO
-  DEP_FILE = CMakeFiles\PROYECTO.dir\BaseDeDatos.cpp.obj.d
+build CMakeFiles/PROYECTO.dir/src/user/BaseDeDatos.cpp.obj: CXX_COMPILER__PROYECTO_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/src/user/BaseDeDatos.cpp || cmake_object_order_depends_target_PROYECTO
+  DEP_FILE = CMakeFiles\PROYECTO.dir\src\user\BaseDeDatos.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PROYECTO.dir\src\user
 
 
 # =============================================================================
@@ -93,7 +93,7 @@ build CMakeFiles/PROYECTO.dir/BaseDeDatos.cpp.obj: CXX_COMPILER__PROYECTO_unscan
 #############################################
 # Link the executable PROYECTO.exe
 
-build PROYECTO.exe: CXX_EXECUTABLE_LINKER__PROYECTO_Debug CMakeFiles/PROYECTO.dir/main.cpp.obj CMakeFiles/PROYECTO.dir/Usuario.cpp.obj CMakeFiles/PROYECTO.dir/Flexibilidad.cpp.obj CMakeFiles/PROYECTO.dir/Fuerza.cpp.obj CMakeFiles/PROYECTO.dir/Cardio.cpp.obj CMakeFiles/PROYECTO.dir/BaseDeDatos.cpp.obj
+build PROYECTO.exe: CXX_EXECUTABLE_LINKER__PROYECTO_Debug CMakeFiles/PROYECTO.dir/src/main.cpp.obj CMakeFiles/PROYECTO.dir/src/user/Usuario.cpp.obj CMakeFiles/PROYECTO.dir/src/exercise/Flexibilidad.cpp.obj CMakeFiles/PROYECTO.dir/src/exercise/Fuerza.cpp.obj CMakeFiles/PROYECTO.dir/src/exercise/Cardio.cpp.obj CMakeFiles/PROYECTO.dir/src/user/BaseDeDatos.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PROYECTO.dir
@@ -102,45 +102,6 @@ build PROYECTO.exe: CXX_EXECUTABLE_LINKER__PROYECTO_Debug CMakeFiles/PROYECTO.di
   TARGET_FILE = PROYECTO.exe
   TARGET_IMPLIB = libPROYECTO.dll.a
   TARGET_PDB = PROYECTO.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target borrador
-
-
-#############################################
-# Order-only phony target for borrador
-
-build cmake_object_order_depends_target_borrador: phony || CMakeFiles/borrador.dir
-
-build CMakeFiles/borrador.dir/Borrador/main.cpp.obj: CXX_COMPILER__borrador_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Borrador/main.cpp || cmake_object_order_depends_target_borrador
-  DEP_FILE = CMakeFiles\borrador.dir\Borrador\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\borrador.dir
-  OBJECT_FILE_DIR = CMakeFiles\borrador.dir\Borrador
-
-build CMakeFiles/borrador.dir/Borrador/CMET.cpp.obj: CXX_COMPILER__borrador_unscanned_Debug C$:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/Borrador/CMET.cpp || cmake_object_order_depends_target_borrador
-  DEP_FILE = CMakeFiles\borrador.dir\Borrador\CMET.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\borrador.dir
-  OBJECT_FILE_DIR = CMakeFiles\borrador.dir\Borrador
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target borrador
-
-
-#############################################
-# Link the executable borrador.exe
-
-build borrador.exe: CXX_EXECUTABLE_LINKER__borrador_Debug CMakeFiles/borrador.dir/Borrador/main.cpp.obj CMakeFiles/borrador.dir/Borrador/CMET.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\borrador.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = borrador.exe
-  TARGET_IMPLIB = libborrador.dll.a
-  TARGET_PDB = borrador.exe.dbg
 
 
 #############################################
@@ -170,8 +131,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build PROYECTO: phony PROYECTO.exe
 
-build borrador: phony borrador.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -180,7 +139,7 @@ build borrador: phony borrador.exe
 #############################################
 # Folder: C:/Users/PC/OneDrive/Escritorio/UTEC/CLionProjects/ProyectoProgra2Laboratorio/cmake-build-debug
 
-build all: phony PROYECTO.exe borrador.exe
+build all: phony PROYECTO.exe
 
 # =============================================================================
 # Built-in targets

@@ -1,8 +1,8 @@
-#include "Flexibilidad.h"
-#include "Fuerza.h"
-#include "Cardio.h"
-#include "BaseDeDatos.h"
-#include "Menus.h"
+#include "../include/exercise/Flexibilidad.h"
+#include "../include/exercise/Fuerza.h"
+#include "../include/exercise/Cardio.h"
+#include "../include/user/BaseDeDatos.h"
+#include "../include/utils/Menus.h"
 
 
 int main() {
@@ -18,6 +18,10 @@ int main() {
                 baseDeDatos->agregar_usuario();
                 break;
             case 2:
+                if (baseDeDatos->getUsuarios().empty()) {
+                    cout << "No hay usuarios registrados en la base de datos." << endl;
+                    break;
+                }
                 opcion2 = menuUsuarios(baseDeDatos->getUsuarios());
                 do {
                     cout << "---- Cuantas semanas durará la rutina (como minimo 4): "; cin >> numero_semanas;
@@ -51,7 +55,6 @@ int main() {
                                         aux_cardio->ingresar_datos();
                                         break;
                                 }
-                                // FALTA ARREGLAR LA MASA MUSCULAR pero q flojera
                                 baseDeDatos->getUsuarios()[opcion2-1]->setMasaMuscular((rand()%2+1)/4); // si hace ejercicios de fuerza aumenta poco su masa muscular
                                 aux_cardio->hallar_CQ_FC(baseDeDatos->getUsuarios()[opcion2-1]->getTmb(),baseDeDatos->getUsuarios()[opcion2-1]->getFcm());
                                 if (opcion4!=5)
@@ -139,20 +142,36 @@ int main() {
                 baseDeDatos->getUsuarios()[opcion2-1]->meta_masa_muscular();
                 break;
             case 3:
+                if (baseDeDatos->getUsuarios().empty()) {
+                    cout << "No hay usuarios registrados en la base de datos." << endl;
+                    break;
+                }
                 opcion8 = menuUsuarios(baseDeDatos->getUsuarios());
                 cadena1 = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_calorias();
                 cadena2 = baseDeDatos->getUsuarios()[opcion8-1]->to_string_historial_imcs();
-                comando_string = "python ../Grafica.py -calorias " + cadena1 + " -imcs " + cadena2;
+                comando_string = "python ../scripts/Grafica.py -calorias " + cadena1 + " -imcs " + cadena2;
                 system(comando_string.c_str());
                 break;
             case 4:
+                if (baseDeDatos->getUsuarios().empty()) {
+                    cout << "No hay usuarios registrados en la base de datos." << endl;
+                    break;
+                }
                 opcion7 = menuUsuarios(baseDeDatos->getUsuarios());
                 baseDeDatos->getUsuarios()[opcion7-1]->reporte_individual();
                 break;
             case 5:
+                if (baseDeDatos->getUsuarios().empty()) {
+                    cout << "No hay usuarios registrados en la base de datos." << endl;
+                    break;
+                }
                 baseDeDatos->reporte_general();
                 break;
             case 6:
+                if (baseDeDatos->getUsuarios().empty()) {
+                    cout << "No hay usuarios registrados en la base de datos." << endl;
+                    break;
+                }
                 cout << "Reporte general exportado" << endl;
                 baseDeDatos->exportarReportes();
                 break;

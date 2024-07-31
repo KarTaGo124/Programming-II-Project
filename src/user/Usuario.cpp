@@ -3,7 +3,7 @@
  * Implementation of the Usuario class.
  */
 
-#include "Usuario.h"
+#include "../../include/user/Usuario.h"
 
 Usuario:: Usuario() {}
 Usuario::Usuario(string nombre, string apellido, string genero,int edad, float peso, float peso_objetivo,
@@ -61,7 +61,7 @@ void Usuario::reporte_individual() {
 }
 
 void Usuario::reporte_individual_exportacion() {
-    ofstream archivo("../ReporteGeneral.txt",ios::app);
+    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
     archivo<< "----------------------------------------" << endl << "Reporte Individual de " <<
            nombre << " " << apellido << endl;
     for (auto i: ejercicios){

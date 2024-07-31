@@ -1,7 +1,7 @@
 //
 //
 
-#include "Flexibilidad.h"
+#include "../../include/exercise/Flexibilidad.h"
 Flexibilidad:: Flexibilidad(){}
 Flexibilidad::Flexibilidad(string nombre){this->nombre = nombre;}
 
@@ -36,7 +36,7 @@ void Flexibilidad::mostrar_informacion() {
 }
 
 void Flexibilidad::exportacion_informacion() {
-    ofstream archivo("../ReporteGeneral.txt",ios::app);
+    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
     archivo << nombre << " durante " << duracion << " minutos con una dificultad " << dificultad << " " <<frecuencia << "mente" << endl;
     archivo <<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();

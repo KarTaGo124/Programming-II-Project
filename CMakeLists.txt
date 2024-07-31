@@ -3,20 +3,12 @@ project(PROYECTO)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(PROYECTO main.cpp
-        Ejercicio.h
-        Usuario.cpp
-        Usuario.h
-        Flexibilidad.cpp
-        Flexibilidad.h
-        Fuerza.cpp
-        Fuerza.h
-        Cardio.cpp
-        Cardio.h
-        BaseDeDatos.cpp
-        BaseDeDatos.h
-        Menus.h
-        Librerias.h
-        ReporteGeneral.txt
+add_executable(PROYECTO src/main.cpp
+        src/user/Usuario.cpp
+        src/exercise/Flexibilidad.cpp
+        src/exercise/Fuerza.cpp
+        src/exercise/Cardio.cpp
+        src/user/BaseDeDatos.cpp
+        docs/ReporteGeneral.txt
 )
 

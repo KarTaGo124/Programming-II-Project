@@ -33,7 +33,7 @@ if delimitadorIMCs in argumentos:
     plt.legend()
     plt.yticks(argumentosIMCs, [format_ticks(val, None) for val in argumentosIMCs])
 plt.tight_layout()  # Adjust the layout for better spacing
-plt.savefig("../Graficas/HistorialAmbos.png")
+plt.savefig("../graphics/HistorialAmbos.png")
 plt.show()
 
 

@@ -1,6 +1,6 @@
 #ifndef PROYECTO_EJERCICIO_H
 #define PROYECTO_EJERCICIO_H
-#include "Librerias.h"
+#include "../utils/Librerias.h"
 
 class Ejercicio {
 protected:

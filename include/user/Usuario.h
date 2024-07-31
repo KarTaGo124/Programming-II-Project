@@ -4,7 +4,7 @@
 #ifndef PROYECTO_USUARIO_H
 #define PROYECTO_USUARIO_H
 
-#include "Ejercicio.h"
+#include "../exercise/Ejercicio.h"
 
 class Usuario {
 private:

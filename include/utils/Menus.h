@@ -7,6 +7,7 @@
  */
 
 #include "Librerias.h"
+#include "../user/Usuario.h"
 
 /**
  * Displays the main menu and prompts the user to choose an option.

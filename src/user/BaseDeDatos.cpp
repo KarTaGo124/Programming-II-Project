@@ -1,14 +1,16 @@
 //
 //
 
-#include "BaseDeDatos.h"
+#include <filesystem>
+#include "../../include/user/BaseDeDatos.h"
 
-#include "Librerias.h"
-BaseDeDatos:: BaseDeDatos(){}
+#include "../../include/utils/Librerias.h"
+
+BaseDeDatos::BaseDeDatos() {}
 
 void BaseDeDatos::agregar_usuario() {
     string nombre, apellido, dni, genero;
-    float peso, peso_objetivo, altura, masa_muscular,masa_muscular_objetivo;
+    float peso, peso_objetivo, altura, masa_muscular, masa_muscular_objetivo;
     int edad;
 
     do {
@@ -40,7 +42,7 @@ void BaseDeDatos::agregar_usuario() {
         cout << "Ingrese el DNI del usuario (8 dígitos): ";
         cin >> dni;
 
-        for (auto i : dni) {
+        for (auto i: dni) {
             if (!isdigit(i)) {
                 sonDigitos = false;
                 break;  // Sale del bucle tan pronto como encuentra un carácter no numérico
@@ -50,7 +52,7 @@ void BaseDeDatos::agregar_usuario() {
         if (dni.length() != 8 || !sonDigitos) {
             cout << "El DNI no es válido. Inténtelo de nuevo." << endl;
         }
-        if (existeUsuarioConDNI(dni)){
+        if (existeUsuarioConDNI(dni)) {
             cout << "El DNI ya ha sido registrado en la base de datos. Inténtelo de nuevo." << endl;
         }
 
@@ -102,7 +104,9 @@ void BaseDeDatos::agregar_usuario() {
         cout << "Ingrese el porcentaje de masa muscular (%peso) del usuario: ";
         cin >> masa_muscular;
         if (masa_muscular < 0 || masa_muscular > 50) {
-            cout << "El porcentaje de masa muscular no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo." << endl;
+            cout
+                    << "El porcentaje de masa muscular no puede ser negativo ni tampoco mayor al 50% del peso. Inténtelo de nuevo."
+                    << endl;
         }
     } while (masa_muscular < 0 || masa_muscular > 50);
 
@@ -111,8 +115,10 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese el porcentaje de masa muscular objetivo (%peso) del usuario: ";
         cin >> masa_muscular_objetivo;
-        if (masa_muscular_objetivo < masa_muscular|| masa_muscular_objetivo > 50) {
-            cout << "El porcentaje de masa muscular objetivo no puede ser negativo, tampoco mayor al 50% del peso ni menor a la masa muscular inicial. Inténtelo de nuevo." << endl;
+        if (masa_muscular_objetivo < masa_muscular || masa_muscular_objetivo > 50) {
+            cout
+                    << "El porcentaje de masa muscular objetivo no puede ser negativo, tampoco mayor al 50% del peso ni menor a la masa muscular inicial. Inténtelo de nuevo."
+                    << endl;
         }
     } while (masa_muscular_objetivo < masa_muscular || masa_muscular_objetivo > 50);
 
@@ -121,14 +127,16 @@ void BaseDeDatos::agregar_usuario() {
     do {
         cout << "Ingrese la edad del usuario: ";
         cin >> edad;
-        if (edad < 15 || edad>60) {
-            cout << "Tienes que tener al menos 15 años y como maximo 60 años para usar el programa. Inténtelo de nuevo." << endl;
+        if (edad < 15 || edad > 60) {
+            cout << "Tienes que tener al menos 15 años y como maximo 60 años para usar el programa. Inténtelo de nuevo."
+                 << endl;
         }
-    } while (edad < 15 || edad>60);
+    } while (edad < 15 || edad > 60);
 
     cout << "¡Edad válida ingresada correctamente!" << endl;
 
-    auto *axu=new Usuario(nombre,apellido,genero,edad,peso,peso_objetivo,altura,dni,masa_muscular,masa_muscular_objetivo);
+    auto *axu = new Usuario(nombre, apellido, genero, edad, peso, peso_objetivo, altura, dni, masa_muscular,
+                            masa_muscular_objetivo);
     usuarios.push_back(axu);
 
     cout << "¡El Usuario se ha registrado correctamente!" << endl;
@@ -136,18 +144,55 @@ void BaseDeDatos::agregar_usuario() {
 }
 
 void BaseDeDatos::reporte_general() {
-    for(auto i: usuarios){i->reporte_individual();}
+    for (auto i: usuarios) { i->reporte_individual(); }
 }
-void BaseDeDatos::  exportarReportes(){
-    ofstream archivo("../ReporteGeneral.txt",ios::out);
-    for(auto i: usuarios){
+
+void BaseDeDatos::exportarReportes() {
+    std::string dir_path = "../../docs";
+    std::string absolute_path = dir_path + "/ReporteGeneral.txt";
+    std::string test_path = dir_path + "/TestReporte.txt";
+
+    // Verificar si el directorio existe
+    if (!std::filesystem::exists(dir_path)) {
+        std::cerr << "El directorio no existe: " << dir_path << std::endl;
+        // Crear el directorio si no existe
+        if (!std::filesystem::create_directories(dir_path)) {
+            std::cerr << "Error al crear el directorio: " << dir_path << std::endl;
+            return;
+        }
+        std::cout << "Directorio creado: " << dir_path << std::endl;
+    }
+
+    // Verificar permisos de escritura en el directorio
+    std::filesystem::perms p = std::filesystem::status(dir_path).permissions();
+    if ((p & std::filesystem::perms::owner_write) == std::filesystem::perms::none) {
+        std::cerr << "No hay permisos de escritura en el directorio: " << dir_path << std::endl;
+        return;
+    }
+
+    // Probar con un archivo nuevo
+    std::ofstream test_file(test_path, std::ios::app);
+    if (!test_file.is_open()) {
+        std::cerr << "Error al abrir el archivo de prueba " << test_path << std::endl;
+        return;
+    }
+    test_file << "Prueba de escritura en archivo nuevo." << std::endl;
+    test_file.close();
+
+    // Intentar abrir el archivo original
+    std::ofstream archivo(absolute_path, std::ios::out);
+    if (!archivo.is_open()) {
+        std::cerr << "Error al abrir el archivo " << absolute_path << std::endl;
+        return;
+    }
+    for (auto i: usuarios) {
         i->reporte_individual_exportacion();
     }
     archivo.close();
 }
 
-bool BaseDeDatos::existeUsuarioConDNI(const string& dni) {
-    for (const auto &i : usuarios) {
+bool BaseDeDatos::existeUsuarioConDNI(const string &dni) {
+    for (const auto &i: usuarios) {
         if (i->getDNI() == dni) {
             return true;
         }
@@ -156,7 +201,8 @@ bool BaseDeDatos::existeUsuarioConDNI(const string& dni) {
 }
 
 BaseDeDatos::~BaseDeDatos() {
-    for (auto i: usuarios) delete i; cout << "Base de datos destruida" << endl;
+    for (auto i: usuarios) delete i;
+    cout << "Base de datos destruida" << endl;
 }
 
 vector<Usuario *> &BaseDeDatos::getUsuarios() {
