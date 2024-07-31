@@ -1,4 +1,3 @@
-#include <filesystem>
 #include "../../include/exercise/Fuerza.h"
 
 Fuerza::Fuerza() {}
@@ -48,34 +47,9 @@ void Fuerza::mostrar_informacion() {
 }
 
 void Fuerza::exportacion_informacion() {
-    std::string absolute_path = "C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\docs\\ReporteGeneral.txt";
-    std::cout << "Ruta absoluta: " << absolute_path << std::endl;
-
-    // Verificar si el archivo está en modo de solo lectura
-    std::filesystem::perms p = std::filesystem::status(absolute_path).permissions();
-    if ((p & std::filesystem::perms::owner_write) == std::filesystem::perms::none) {
-        std::cerr << "El archivo está en modo de solo lectura: " << absolute_path << std::endl;
-        return;
-    }
-
-    // Probar con un archivo nuevo
-    std::string test_path = "C:\\Users\\PC\\OneDrive\\Escritorio\\UTEC\\CLionProjects\\docs\\TestReporte.txt";
-    std::ofstream test_file(test_path, std::ios::app);
-    if (!test_file.is_open()) {
-        std::cerr << "Error al abrir el archivo de prueba " << test_path << std::endl;
-        return;
-    }
-    test_file << "Prueba de escritura en archivo nuevo." << std::endl;
-    test_file.close();
-
-    // Intentar abrir el archivo original
-    std::ofstream archivo(absolute_path, std::ios::app);
-    if (!archivo.is_open()) {
-        std::cerr << "Error al abrir el archivo " << absolute_path << std::endl;
-        return;
-    }
-    archivo << "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de " << peso << " Kg " << frecuencia << "mente" << std::endl;
-    archivo << "Calorias quemadas : " << CQE << std::endl;
+    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
+    archivo<< "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de " << peso << " Kg " << frecuencia << "mente" << endl;
+    archivo<<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();
 }
 

@@ -1,7 +1,6 @@
 //
 //
 
-#include <filesystem>
 #include "../../include/user/BaseDeDatos.h"
 
 #include "../../include/utils/Librerias.h"
@@ -148,41 +147,9 @@ void BaseDeDatos::reporte_general() {
 }
 
 void BaseDeDatos::exportarReportes() {
-    std::string dir_path = "../../docs";
-    std::string absolute_path = dir_path + "/ReporteGeneral.txt";
-    std::string test_path = dir_path + "/TestReporte.txt";
-
-    // Verificar si el directorio existe
-    if (!std::filesystem::exists(dir_path)) {
-        std::cerr << "El directorio no existe: " << dir_path << std::endl;
-        // Crear el directorio si no existe
-        if (!std::filesystem::create_directories(dir_path)) {
-            std::cerr << "Error al crear el directorio: " << dir_path << std::endl;
-            return;
-        }
-        std::cout << "Directorio creado: " << dir_path << std::endl;
-    }
-
-    // Verificar permisos de escritura en el directorio
-    std::filesystem::perms p = std::filesystem::status(dir_path).permissions();
-    if ((p & std::filesystem::perms::owner_write) == std::filesystem::perms::none) {
-        std::cerr << "No hay permisos de escritura en el directorio: " << dir_path << std::endl;
-        return;
-    }
-
-    // Probar con un archivo nuevo
-    std::ofstream test_file(test_path, std::ios::app);
-    if (!test_file.is_open()) {
-        std::cerr << "Error al abrir el archivo de prueba " << test_path << std::endl;
-        return;
-    }
-    test_file << "Prueba de escritura en archivo nuevo." << std::endl;
-    test_file.close();
-
-    // Intentar abrir el archivo original
-    std::ofstream archivo(absolute_path, std::ios::out);
+    std::ofstream archivo("../../docs/ReporteGeneral.txt", std::ios::out);
     if (!archivo.is_open()) {
-        std::cerr << "Error al abrir el archivo " << absolute_path << std::endl;
+        std::cerr << "Error al abrir el archivo en base de datos ../../docs/ReporteGeneral.txt" << std::endl;
         return;
     }
     for (auto i: usuarios) {
