@@ -47,7 +47,7 @@ void Fuerza::mostrar_informacion() {
 }
 
 void Fuerza::exportacion_informacion() {
-    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
+    ofstream archivo("../docs/ReporteGeneral.txt",ios::app);
     archivo<< "Realiza " << repeticiones << " repeticiones de " << nombre << " en " << series << " series con un peso de " << peso << " Kg " << frecuencia << "mente" << endl;
     archivo<<"Calorias quemadas : "<<CQE<<endl;
     archivo.close();

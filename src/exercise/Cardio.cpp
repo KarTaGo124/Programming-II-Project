@@ -51,7 +51,7 @@ void Cardio::mostrar_informacion() {
 }
 
 void Cardio::exportacion_informacion() {
-    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
+    ofstream archivo("../docs/ReporteGeneral.txt",ios::app);
     if (nombre != "Saltar Cuerda") {
         archivo<< nombre << " durante " << duracion << " minutos a " << velocidad << " km/h " << frecuencia << "mente" << endl;
         archivo<<"Calorias quemadas : "<<CQE<<endl;

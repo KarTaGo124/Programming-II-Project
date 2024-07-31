@@ -61,7 +61,7 @@ void Usuario::reporte_individual() {
 }
 
 void Usuario::reporte_individual_exportacion() {
-    ofstream archivo("../../docs/ReporteGeneral.txt",ios::app);
+    ofstream archivo("../docs/ReporteGeneral.txt",ios::app);
     archivo<< "----------------------------------------" << endl << "Reporte Individual de " <<
            nombre << " " << apellido << endl;
     for (auto i: ejercicios){

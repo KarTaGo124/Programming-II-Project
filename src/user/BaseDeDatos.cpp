@@ -147,11 +147,7 @@ void BaseDeDatos::reporte_general() {
 }
 
 void BaseDeDatos::exportarReportes() {
-    std::ofstream archivo("../../docs/ReporteGeneral.txt", std::ios::out);
-    if (!archivo.is_open()) {
-        std::cerr << "Error al abrir el archivo en base de datos ../../docs/ReporteGeneral.txt" << std::endl;
-        return;
-    }
+    ofstream archivo("../docs/ReporteGeneral.txt", ios::out);
     for (auto i: usuarios) {
         i->reporte_individual_exportacion();
     }
